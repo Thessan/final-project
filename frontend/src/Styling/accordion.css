@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
+
+/* Wraps accordion containers and all all accordions */
+.accordion-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 50px;
+}
+
+/* Wraps first half of the accordions */
+.accordion-container-one {
+  height: auto;
+}
+
+/* Wraps second half of the accordions */
+.accordion-container-two {
+  height: auto;
+}
+
+/* Accordion section */
+.accordion-section {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+/* The buttons (the grey area) that are used to open and close the accordion panel */
+.accordion-button {
+  display: flex;
+  align-items: center;
+  background-color: #eee;
+  transition: background-color 0.6s ease;
+  color: #444;
+  padding: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Adds a background color to the button if it is hoovered */
+.accordion-button:hover {
+  background-color: #ccc;
+}
+
+/* Adds a background color to the button if it is clicked (is active) */
+.accordion-button.active {
+  background-color: #ccc;
+}
+
+/* The accordion content title */
+.accordion-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* The chevron icon */
+.accordion-icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+}
+
+/* To rotate icon when state is active */
+.rotate {
+  transform: rotate(90deg);
+}
+
+/* The accordion content panel that wraps the content text (which is hidden by default) */
+.accordion-content {
+  background-color: white;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+/* The accordion content text */
+.accordion-text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 18px;
+}
