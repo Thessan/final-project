@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./header.jpg);
+    background-size: cover;
+    height: 150px;
+    width: auto;
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 668px) {
+    .header {
+        height: 300px;
+    }
+}
+
+/* DESKTOP VIEW */
+@media screen and (min-width: 1024px) {
+    .header {
+        height: 500px;
+    }
+}

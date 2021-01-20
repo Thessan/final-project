@@ -45,7 +45,7 @@ export function FirstAccordion() {
             />
         </div>
 
-        <div classname="accordion-container-two">
+        <div className="accordion-container-two">
             <Accordion
             title="Week 8"
             content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
