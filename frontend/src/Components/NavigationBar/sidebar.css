@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* div wrapping the hamburger icon */
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hamburger-icon {
+    color: goldenrod;
+    margin: 5px 0 0 5px;
+    font-size: 15px;
+}
+
+/* list class that wraps the close-icon */
+.sidebar-toggle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: goldenrod;
+    width: 100%;
+    height: 40px;
+}
+
+.close-icon {
+    background: none;
+    color: #fff;
+    margin: 5px 0 0 5px;
+    font-size: 15px;  
+    padding: 0 10px;  
+}
+
+/* nav class that wraps all items in the sidebar */
+.sidebar-menu {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    background-color: goldenrod;
+    width: 200px;
+    height: 350px;
+    top: 0;
+    left: -100%; /* to hide the sidebar before clicking the hamburger icon */
+    transition: 850ms;
+}
+
+.sidebar-menu.active {
+    left: 0; /* to display the sidebar when hamburger icon is clicked */
+    transition: 350ms;
+}
+
+/* ul class that wraps sidebar-text and span class */
+.sidebar-menu-items {
+    width: 100%;
+}
+
+/* sidebar-text is defined in SidebarData */
+.sidebar-text {
+    list-style: none;
+    height: 40px;
+}
+
+.sidebar-text a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 14px;
+    font-weight: 400;
+    height: 100%;
+    padding: 0 16px;
+}
+
+/* title of items defined in SidebarData */
+span {
+    margin-left: 16px;
+}
+
+/* WILL ONLY BE ADDED TO TABLET AND DESKTOP VIEW */
+.sidebar-text a:hover {
+    background-color: rgba(252, 216, 127, 0.774);
+}
