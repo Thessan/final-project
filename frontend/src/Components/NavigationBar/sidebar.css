@@ -14,7 +14,7 @@
 .hamburger-icon {
     color: goldenrod;
     margin: 5px 0 0 5px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 /* list class that wraps the close-icon */
@@ -31,7 +31,7 @@
     background: none;
     color: #fff;
     margin: 5px 0 0 5px;
-    font-size: 15px;  
+    font-size: 16px;  
     padding: 0 10px;  
 }
 
@@ -42,7 +42,7 @@
     position: fixed;
     background-color: goldenrod;
     width: 200px;
-    height: 350px;
+    height: 100vh;
     top: 0;
     left: -100%; /* to hide the sidebar before clicking the hamburger icon */
     transition: 850ms;
@@ -69,10 +69,14 @@
     align-items: center;
     text-decoration: none;
     color: #f5f5f5;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     height: 100%;
     padding: 0 16px;
+}
+
+.sidebar-text a:hover {
+    background-color: rgba(252, 216, 127, 0.774);
 }
 
 /* title of items defined in SidebarData */
@@ -80,7 +84,35 @@ span {
     margin-left: 16px;
 }
 
-/* WILL ONLY BE ADDED TO TABLET AND DESKTOP VIEW */
-.sidebar-text a:hover {
-    background-color: rgba(252, 216, 127, 0.774);
+/* TABLET VIEW */
+@media screen and (min-width: 668px) {
+    .hamburger-icon {
+        margin: 10px 0 0 10px;
+        font-size: 30px;
+    }
+
+    .close-icon {
+        font-size: 18px;   
+        padding: 0 20px;
+    }
+
+    .sidebar-menu {
+        width: 250px;
+    }
+
+    .sidebar-text {
+        height: 50px;
+    }
+    .sidebar-text a {
+        font-size: 18px;
+        padding: 0 25px;
+    }
+    
+    span {
+        margin-left: 16px;
+    } 
 }
+
+
+
+
