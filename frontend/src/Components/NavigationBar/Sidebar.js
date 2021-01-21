@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import * as FaIcons from 'react-icons/fa' 
+import * as GiIcons from 'react-icons/gi' 
 import * as MdIcons from 'react-icons/md' 
 
 import './sidebar.css'
@@ -15,7 +15,7 @@ export const Sidebar = () => {
         <>
         <div className="navbar">
             <Link to="#" className="hamburger-icon">
-                <FaIcons.FaBars onClick={showSidebar}/> {/* when hamburger menu is clicked the sidebar will be visible */}
+                <GiIcons.GiHamburgerMenu onClick={showSidebar}/> {/* when hamburger menu is clicked the sidebar will be visible */}
             </Link>
         </div>
 

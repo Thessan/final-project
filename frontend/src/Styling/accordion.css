@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
 
-/* Wraps accordion containers and all all accordions */
+/* Wraps accordion containers and all accordions */
 .accordion-wrapper {
   display: flex;
-  flex-direction: row;
-  margin: 50px;
+  flex-direction: column;
+  margin: 30px;
 }
 
 /* Wraps first half of the accordions */
@@ -31,13 +31,13 @@
   background-color: #eee;
   transition: background-color 0.6s ease;
   color: #444;
-  padding: 18px;
+  padding: 8px;
   border: none;
   outline: none;
   cursor: pointer;
 }
 
-/* Adds a background color to the button if it is hoovered */
+/* Adds a background color to the button if it is hovered */
 .accordion-button:hover {
   background-color: #ccc;
 }
@@ -67,7 +67,7 @@
 
 /* The accordion content panel that wraps the content text (which is hidden by default) */
 .accordion-content {
-  background-color: white;
+  background-color: #fff;
   overflow: hidden;
   transition: max-height 0.6s ease;
 }
@@ -75,7 +75,34 @@
 /* The accordion content text */
 .accordion-text {
   font-family: "Open Sans", sans-serif;
-  font-weight: 400;
   font-size: 14px;
   padding: 18px;
+}
+
+
+/* TABLET VIEW */ 
+@media screen and (min-width: 668px) {
+  .accordion-wrapper {
+    flex-direction: row;
+    margin: 40px;
+  }
+}
+
+/* DESKTOP VIEW */
+@media screen and (min-width: 1024px) {
+  .accordion-wrapper {
+    margin: 50px;
+  }
+
+  .accordion-button {
+  padding: 14px;
+  }
+
+  .accordion-title {
+  font-size: 18px;
+  }
+
+  .accordion-text {
+  font-size: 18px;
+  }
 }
