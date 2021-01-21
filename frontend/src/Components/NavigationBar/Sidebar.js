@@ -13,7 +13,7 @@ export const Sidebar = () => {
     
     return (
         <>
-        <div className="navbar">
+        <div className="sidebar">
             <Link to="#" className="hamburger-icon">
                 <GiIcons.GiHamburgerMenu onClick={showSidebar}/> {/* when hamburger menu is clicked the sidebar will be visible */}
             </Link>

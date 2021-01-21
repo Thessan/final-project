@@ -1,0 +1,38 @@
+/* MOBILE VIEW */
+@media screen and (max-width: 667px) {
+    .navbar {
+        display: none;
+    }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 668px) {
+    .navbar {
+        display: none;
+    }
+}
+
+
+    /* DESKTOP VIEW */
+@media screen and (min-width: 1024px) {
+    
+    /* div wrapping all links in the navbar */
+    .navbar {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 45px;
+    }
+
+    /* links in navbar */
+    .navbar a {
+        font-size: 18px;
+        color: goldenrod;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .navbar-text a:hover {
+        color: rgb(170, 129, 25);
+    }
+}

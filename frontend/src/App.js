@@ -7,6 +7,7 @@ import { FirstTrimester } from './Pages/FirstTrimester'
 import { SecondTrimester } from './Pages/SecondTrimester'
 import { ThirdTrimester } from './Pages/ThirdTrimester'
 import { Sidebar } from './Components/NavigationBar/Sidebar'
+import { Navbar } from './Components/NavigationBar/Navbar'
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
     
     <BrowserRouter>
       <Sidebar />
+      <Navbar />
         <div className="header"></div>
           <Switch>
             <Route path='/' exact component={Home} />

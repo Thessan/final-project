@@ -5,7 +5,7 @@
 }
 
 /* div wrapping the hamburger icon */
-.navbar {
+.sidebar {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -13,7 +13,7 @@
 
 .hamburger-icon {
     color: goldenrod;
-    margin: 5px 0 0 5px;
+    margin: 8px 2px 2px 8px;
     font-size: 20px;
 }
 
@@ -58,12 +58,12 @@
     width: 100%;
 }
 
-/* sidebar-text is defined in SidebarData */
+/* sidebar-text is defined in SidebarData.js */
 .sidebar-text {
     list-style: none;
     height: 40px;
 }
-
+ /* links in the sidebar */
 .sidebar-text a {
     display: flex;
     align-items: center;
@@ -79,7 +79,7 @@
     background-color: rgba(252, 216, 127, 0.774);
 }
 
-/* title of items defined in SidebarData */
+/* title of items defined in Sidebar.js */
 span {
     margin-left: 16px;
 }
@@ -87,7 +87,7 @@ span {
 /* TABLET VIEW */
 @media screen and (min-width: 668px) {
     .hamburger-icon {
-        margin: 10px 0 0 10px;
+        margin: 10px 4px 4px 10px;
         font-size: 30px;
     }
 
@@ -113,6 +113,12 @@ span {
     } 
 }
 
-
+/* DESKTOP VIEW */
+@media screen and (min-width: 1024px) {
+    /* to hide the sidebar in desktop view */
+    .hamburger-icon {
+    display: none;
+    }
+}
 
 
