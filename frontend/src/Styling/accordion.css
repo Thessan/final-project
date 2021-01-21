@@ -79,18 +79,29 @@
   padding: 18px;
 }
 
-
 /* TABLET VIEW */ 
 @media screen and (min-width: 668px) {
   .accordion-wrapper {
-    flex-direction: row;
     margin: 40px;
   }
+
+  .accordion-button {
+    padding: 14px;
+    }
+    
+  .accordion-title {
+    font-size: 18px;
+    }
+  
+    .accordion-text {
+    font-size: 18px;
+    }
 }
 
 /* DESKTOP VIEW */
 @media screen and (min-width: 1024px) {
   .accordion-wrapper {
+    flex-direction: row;
     margin: 50px;
   }
 

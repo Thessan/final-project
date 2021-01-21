@@ -1,9 +1,11 @@
-import React from 'react';
+import React from 'react'
+
+import { SecondAccordion } from '../Components/SecondAccordion'
 
 export const SecondTrimester = () => {
     return (
-        <div className='trimester'>
-        <h1>This is the second trimester page</h1>
-        </div>
+        <>
+        <SecondAccordion />
+        </>
     );
 }
