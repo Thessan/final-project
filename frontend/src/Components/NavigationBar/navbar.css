@@ -12,8 +12,7 @@
     }
 }
 
-
-    /* DESKTOP VIEW */
+/* DESKTOP VIEW */
 @media screen and (min-width: 1024px) {
     
     /* div wrapping all links in the navbar */
@@ -26,7 +25,7 @@
 
     /* links in navbar */
     .navbar a {
-        font-size: 18px;
+        font-size: 16px;
         color: goldenrod;
         text-decoration: none;
         font-weight: 600;
