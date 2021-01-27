@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import './Styling/header.css'
-import { todosOne } from './Reducers/todosOne'
+import { todos } from './Reducers/todos'
 import { Home } from './Pages/Home'
 import { FirstTrimester } from './Pages/FirstTrimester'
 import { SecondTrimester } from './Pages/SecondTrimester'
@@ -14,7 +14,7 @@ import { Sidebar } from './Components/NavigationBar/Sidebar'
 import { Navbar } from './Components/NavigationBar/Navbar'
 
 const reducer = combineReducers({
-  todosOneReducer: todosOne.reducer
+  todosReducer: todos.reducer
 })
 
 const store = configureStore({ reducer })

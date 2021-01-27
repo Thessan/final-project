@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper =styled.section`
-display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 `
@@ -11,7 +11,7 @@ export const TodoContainer = styled.div`
     width: 330px;
     margin: 20px;
     padding: 8px;
-    border-bottom: double 3px gray;
+    border-bottom: solid 3px goldenrod;
 `
 
 export const TodoTitel = styled.p`

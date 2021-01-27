@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { todos } from '../Reducers/todos'
@@ -10,11 +10,11 @@ import {
         List,
         TodoText } from '../Styling/TodoStyling'
 
-export const TodoListOne = () => {
+export const TodoListThree = () => {
     const dispatch = useDispatch();
 
     // reducer from App.js
-    const items = useSelector(store => store.todosReducer[0]);
+    const items = useSelector(store => store.todosReducer[2]);
 
     // onChecked takes the function checkedItem from the reducer
     // and dispatch/trigger the action to update the state from
@@ -27,7 +27,7 @@ export const TodoListOne = () => {
         // mapping over the name:todos from createSlice in todos.js
         <Wrapper>
             <TodoContainer>
-            <TodoTitel>This is a todo list</TodoTitel>
+            <TodoTitel>This is TodoListThree</TodoTitel>
             {items.map(todoItems => (
                 <EachTodoContainer key={todoItems.id}>
                     <List>
@@ -42,4 +42,4 @@ export const TodoListOne = () => {
             </TodoContainer>
         </Wrapper>
     )
-}
+} */
