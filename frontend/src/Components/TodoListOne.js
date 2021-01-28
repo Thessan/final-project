@@ -15,19 +15,19 @@ export const TodoListOne = () => {
 
     // reducer from App.js
     const items = useSelector(store => store.todosReducer[0]);
-
+    
     // onChecked takes the function checkedItem from the reducer
     // and dispatch/trigger the action to update the state from
     // not being checked/completed to being checked/completed
-    const onChecked = complete => {
-        dispatch(todos.actions.toggleComplete(complete))
+    const onChecked = (complete) => {
+        dispatch(todos.actions.toggleComplete((complete)))
     }
 
     return (
         // mapping over the name:todos from createSlice in todos.js
         <Wrapper>
             <TodoContainer>
-            <TodoTitel>This is a todo list</TodoTitel>
+            <TodoTitel>This is TodoListOne</TodoTitel>
             {items.map(todoItems => (
                 <EachTodoContainer key={todoItems.id}>
                     <List>
