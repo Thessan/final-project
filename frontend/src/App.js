@@ -28,8 +28,7 @@ if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON);
 };
 
-/*  the original setup for the reducer
-( const store = configureStore({ reducer }); )
+/*  the original setup ( const store = configureStore({ reducer }); )
 is changed to the line of code below */
 const store = createStore(reducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
