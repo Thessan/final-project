@@ -13,6 +13,7 @@ import { TodoLists } from './Pages/TodoLists'
 import { Sidebar } from './Components/NavigationBar/Sidebar'
 import { Navbar } from './Components/NavigationBar/Navbar'
 
+
 const reducer = combineReducers({todosReducer: todos.reducer})
 
 /* These lines of code is a setup to store the checked/completed To-Do's locally

@@ -3,9 +3,11 @@ import styled from 'styled-components'
 
 export const Home = () => {
     return (
+        <>
         <HomeContainer>
             <Text>This is the homepage</Text>
         </HomeContainer>
+        </>
     );
 }
 
