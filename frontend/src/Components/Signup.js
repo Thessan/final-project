@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
+import { user } from '../Reducers/user'
 
 const SIGNUP_URL = 'https://pregnancy-week-by-week.herokuapp.com/signup'
 
@@ -13,8 +14,8 @@ export const Signup = () => {
     // will force email addresses to have the correct pattern (e.g xx@xxx.xx)
     const validEmail = { pattern: "^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$" } 
 
-    /* const signupError = useSelector((store) => store.user.login.statusMessage); */
-
+    /* const signupError = useSelector((store) => store.user.login.statusMessage);
+ */
     const handleSignupSuccess = (signupResponse) => {
         dispatch(user.actions.setUserId({ userId: signupResponse.userId }));
         dispatch(user.actions.setStatusMessage({ statusMessage: 'Signup success' }));
@@ -29,13 +30,13 @@ export const Signup = () => {
         setUsername(event.target.value);
     };
 
-  /*   const onEmailChange = (event) => {
+    const onEmailChange = (event) => {
         setEmail(event.target.value);
     };
 
     const onPasswordChange = (event) => {
         setPassword(event.target.value);
-    }; */
+    };
 
     // fetch signup
     const onSignup = (event) => {
@@ -69,12 +70,34 @@ export const Signup = () => {
                 <div className="username">
                     <input type="text"
                         id="username"
+                        placeholder="Username"
                         onChange={onUsernameChange}
-                        inputProps={validEmail}
                     />
                 </div>
+
+                <div className="email">
+                    <input type="text"
+                        id="email"
+                        placeholder="Email"
+                        onChange={onEmailChange}
+                        validEmail={validEmail}
+                    />
+                        <label> e.g hello@hello.com </label>
+                </div>
+
+                <div className="password">
+                    <input type="password"
+                        id="password"
+                        placeholder="Password"
+                        onChange={onPasswordChange}
+                    />
+                        <label> min 5 characters, max 15 </label>
+                </div>
+
+                
             </div>
         </form>
         </>
     )
 }
+

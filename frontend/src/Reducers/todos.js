@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+/* import { createSlice } from '@reduxjs/toolkit'
 
 // function with all the todo items and their initial state
 export const todos = createSlice({
@@ -32,4 +32,4 @@ export const todos = createSlice({
             }
         } 
     }
-})
+}) */

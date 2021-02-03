@@ -47,8 +47,11 @@ userSchema.pre("save", async function (next) {
   // this will hash the password after signup details are validated
 const salt = bcrypt.genSaltSync();
 user.password = bcrypt.hashSync(user.password, salt);
+
+// to continue with the save
 next();
-})
+}
+)
 
 const User = mongoose.model('User', userSchema);
 
@@ -106,7 +109,7 @@ app.post('/signup', async (request, response) => {
     }).save();
 
     // signup successful (but user will not be automatically logged in)
-    response.status(200).json({ userID: user._id });
+    response.status(200).json({}); //  userID: user._id 
   }
   catch (err) {
     // signup failed
@@ -134,7 +137,7 @@ app.post('/login', async (request, response) => {
     }
 });
 
-// AUTHENTICATED ENDPOINT
+// AUTHENTICATED ENDPOINT after login
 // this endpoint is only accessible after user has logged in with
 // valid username, password and accessToken
 app.get('/login/:id/memberPage', authenticateUser);
@@ -143,10 +146,6 @@ app.get('/login/:id/memberPage', (request, response) => {
   const memberPage = `Welcome, ${request.user.username}, you are now logged in.`
   response.status(201).json(memberPage)
 });
-
-app.get('/login/:id', (request, response) => {
-  response.status(501).send();
-})
 
 // start the server
 app.listen(port, () => {
