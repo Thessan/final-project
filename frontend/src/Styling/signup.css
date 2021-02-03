@@ -1,0 +1,37 @@
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    border: solid goldenrod 5px;
+}
+
+.signup-form p {
+    font-size: 13px;
+    text-align: center;
+    margin: 10px;
+}
+
+label {
+    font-size: 10px;
+    color: grey;
+}
+
+.label-div {
+    width: 150px;
+    height: 18px;
+}
+
+.signup-button {
+    margin: 15px 0 10px 0;
+}
+
+.to-login {
+    font-size: 13px;
+    margin: 10px;
+}

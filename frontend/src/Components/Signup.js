@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import { user } from '../Reducers/user'
+import '../Styling/signup.css'
 
 const SIGNUP_URL = 'https://pregnancy-week-by-week.herokuapp.com/signup'
 
@@ -11,11 +13,8 @@ export const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    // will force email addresses to have the correct pattern (e.g xx@xxx.xx)
-    const validEmail = { pattern: "^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$" } 
+    const signupError = useSelector((store) => store.user.login.statusMessage);
 
-    /* const signupError = useSelector((store) => store.user.login.statusMessage);
- */
     const handleSignupSuccess = (signupResponse) => {
         dispatch(user.actions.setUserId({ userId: signupResponse.userId }));
         dispatch(user.actions.setStatusMessage({ statusMessage: 'Signup success' }));
@@ -40,7 +39,6 @@ export const Signup = () => {
 
     // fetch signup
     const onSignup = (event) => {
-        
 
         fetch(SIGNUP_URL, {
             method: 'POST',
@@ -68,32 +66,36 @@ export const Signup = () => {
         <>
         <form onSubmit= {onSignup}>
             <div className="signup-form" tabIndex="0">
-                <div className="username">
-                    <input type="text"
-                        id="username"
-                        placeholder="Username"
-                        onChange={onUsernameChange}
-                    />
-                </div>
+                <p>Want to become a member? Sign up here!</p>
+                    <div className="input">
+                        <input type="text"
+                            id="username"
+                            placeholder="Username"
+                            onChange={onUsernameChange}
+                        />
+                    </div>
+                
+                    <div className="input">
+                        <input type="email"
+                            id="email"
+                            placeholder="Email"
+                            onChange={onEmailChange}
+                        />  
+                    </div>
+                        <div className="label-div">
+                            <label> e.g hello@hello.com </label>
+                        </div>
 
-                <div className="email">
-                    <input type="text"
-                        id="email"
-                        placeholder="Email"
-                        onChange={onEmailChange}
-                        validemail={validEmail}
-                    />
-                        <label> e.g hello@hello.com </label>
-                </div>
-
-                <div className="password">
-                    <input type="password"
-                        id="password"
-                        placeholder="Password"
-                        onChange={onPasswordChange}
-                    />
-                        <label> min 5 characters, max 15 </label>
-                </div>
+                    <div className="input">
+                        <input type="password"
+                            id="password"
+                            placeholder="Password"
+                            onChange={onPasswordChange}
+                        />
+                    </div>
+                        <div className="label-div">
+                            <label> min 5 characters, max 15 </label>
+                        </div>
 
                 <div className="signup-button" tabIndex="0">
                     <button type="submit"
@@ -102,7 +104,11 @@ export const Signup = () => {
                             Signup
                         </button>
                 </div>
+                {signupError && <p>{signupError}</p>}
 
+                <div className="to-login">
+                    <p>Already a member? <Link to={`/login`}>Login here</Link></p>
+                </div>
             </div>
         </form>
         </>

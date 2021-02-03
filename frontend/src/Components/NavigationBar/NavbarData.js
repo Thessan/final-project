@@ -33,6 +33,13 @@ export const NavbarData = [
         className: 'navbar-text'
     },
 
+    {
+        title: 'Signup',
+        path: '/signup',
+        icon: <GoIcons.GoHeart />,
+        className: 'navbar-text'
+    },
+
    /*  {
         title: 'Todo Lists',
         path: '/todo-lists',

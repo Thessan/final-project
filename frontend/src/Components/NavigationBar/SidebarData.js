@@ -33,6 +33,13 @@ export const SidebarData = [
         className: 'sidebar-text'
     },
 
+    {
+        title: 'Signup',
+        path: '/signup',
+        icon: <GoIcons.GoHeart />,
+        className: 'sidebar-text'
+    },
+
    /*  {
         title: 'Todo Lists',
         path: '/todo-lists',

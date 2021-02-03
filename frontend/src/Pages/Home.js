@@ -1,15 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Signup } from '../Components/Signup'
-
 export const Home = () => {
     return (
         <>
         <HomeContainer>
             <Text>This is the homepage</Text>
         </HomeContainer>
-        <Signup />
         </>
     );
 }
