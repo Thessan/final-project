@@ -40,7 +40,7 @@ export const Signup = () => {
 
     // fetch signup
     const onSignup = (event) => {
-        event.preventDefault();
+        
 
         fetch(SIGNUP_URL, {
             method: 'POST',
@@ -61,6 +61,7 @@ export const Signup = () => {
             setUsername("") 
             setEmail("") 
             setPassword("") 
+            console.log(onSignup)
     }
 
     return (
@@ -80,7 +81,7 @@ export const Signup = () => {
                         id="email"
                         placeholder="Email"
                         onChange={onEmailChange}
-                        validEmail={validEmail}
+                        validemail={validEmail}
                     />
                         <label> e.g hello@hello.com </label>
                 </div>
@@ -97,11 +98,10 @@ export const Signup = () => {
                 <div className="signup-button" tabIndex="0">
                     <button type="submit"
                         value="submit"
-                        onClick={onSignup}>
+                        onClick={(event) => onSignup()}>
                             Signup
                         </button>
                 </div>
-
 
             </div>
         </form>

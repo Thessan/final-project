@@ -87,7 +87,7 @@ app.use((request, response, next) => {
 })
 
 // HOMEPAGE
-app.get('/', (request, reponse) => {
+app.get('/', (request, response) => {
   if (response) {
     response.status(200).send(listEndpoints(app)) // will display all endpoints 
   } else {
@@ -109,7 +109,7 @@ app.post('/signup', async (request, response) => {
     }).save();
 
     // signup successful (but user will not be automatically logged in)
-    response.status(200).json({}); //  userID: user._id 
+    response.status(200).json({userID: user._id}); 
   }
   catch (err) {
     // signup failed

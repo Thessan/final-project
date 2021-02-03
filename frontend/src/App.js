@@ -10,7 +10,7 @@ import { Home } from './Pages/Home'
 import { FirstTrimester } from './Pages/FirstTrimester'
 import { SecondTrimester } from './Pages/SecondTrimester'
 import { ThirdTrimester } from './Pages/ThirdTrimester'
-import { TodoLists } from './Pages/TodoLists'
+/* import { TodoLists } from './Pages/TodoLists' */
 import { Sidebar } from './Components/NavigationBar/Sidebar'
 import { Navbar } from './Components/NavigationBar/Navbar'
 
@@ -53,7 +53,7 @@ export const App = () => {
             <Route path='/first-trimester' component={FirstTrimester} />
             <Route path='/second-trimester' component={SecondTrimester} />
             <Route path='/third-trimester' component={ThirdTrimester} />
-            <Route path='/todo-lists' component={TodoLists} />
+            {/* <Route path='/todo-lists' component={TodoLists} /> */}
           </Switch>
       </BrowserRouter>
       </Provider>
