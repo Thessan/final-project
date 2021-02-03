@@ -94,7 +94,15 @@ export const Signup = () => {
                         <label> min 5 characters, max 15 </label>
                 </div>
 
-                
+                <div className="signup-button" tabIndex="0">
+                    <button type="submit"
+                        value="submit"
+                        onClick={onSignup}>
+                            Signup
+                        </button>
+                </div>
+
+
             </div>
         </form>
         </>
