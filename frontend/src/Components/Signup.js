@@ -51,6 +51,7 @@ export const Signup = () => {
                     throw "Sorry, could not signup user";
                 }
                 return response.json();
+                
             })
             .then((json) => handleSignupSuccess(json))
             .catch((err) => handleSignupFailed(err));

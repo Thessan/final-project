@@ -11,7 +11,6 @@ import { FirstTrimester } from './Pages/FirstTrimester'
 import { SecondTrimester } from './Pages/SecondTrimester'
 import { ThirdTrimester } from './Pages/ThirdTrimester'
 /* import { TodoLists } from './Pages/TodoLists' */
-import { Signup } from './Components/Signup'
 import { Login } from './Components/Login'
 import { Sidebar } from './Components/NavigationBar/Sidebar'
 import { Navbar } from './Components/NavigationBar/Navbar'
@@ -56,7 +55,6 @@ export const App = () => {
             <Route path='/second-trimester' component={SecondTrimester} />
             <Route path='/third-trimester' component={ThirdTrimester} />
             {/* <Route path='/todo-lists' component={TodoLists} /> */}
-            <Route path='/signup' component={Signup}/>
             <Route path='/login' component ={Login} />
           </Switch>
       </BrowserRouter>

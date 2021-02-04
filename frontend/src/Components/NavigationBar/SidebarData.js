@@ -1,6 +1,7 @@
 import React from 'react'
 import * as AiIcons from 'react-icons/ai'
 import * as GoIcons from 'react-icons/go'
+import * as IoIcons from 'react-icons/io'
 /* import * as FaIcons from 'react-icons/fa' */
 
 // I'm mapping over these items in Sidebar.js
@@ -34,11 +35,12 @@ export const SidebarData = [
     },
 
     {
-        title: 'Signup',
-        path: '/signup',
-        icon: <GoIcons.GoHeart />,
+        title: 'Login',
+        path: '/login',
+        icon: <IoIcons.IoIosUnlock />,
         className: 'sidebar-text'
     },
+    
 
    /*  {
         title: 'Todo Lists',
