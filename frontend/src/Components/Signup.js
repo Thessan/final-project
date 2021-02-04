@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { user } from '../Reducers/user'
+import user  from '../Reducers/user'
 import '../Styling/signup.css'
 
 const SIGNUP_URL = 'https://pregnancy-week-by-week.herokuapp.com/signup'
@@ -13,7 +13,7 @@ export const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const signupError = useSelector((store) => store.user.login.statusMessage);
+    const signupError = useSelector((store) => store.Reducer.login.statusMessage);
 
     const handleSignupSuccess = (signupResponse) => {
         dispatch(user.actions.setUserId({ userId: signupResponse.userId }));
@@ -59,7 +59,6 @@ export const Signup = () => {
             setUsername("") 
             setEmail("") 
             setPassword("") 
-            console.log(onSignup)
     }
 
     return (

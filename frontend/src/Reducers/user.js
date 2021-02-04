@@ -2,13 +2,13 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState= {
         login: {
-        accessToken: localStorage.accessToken || null,
+        accessToken: null,
         userId: 0,
         statusMessage: "",
     },
 };
 
-export const user = createSlice({
+const user = createSlice({
     name: 'user',
     initialState: initialState,
     reducers: {
@@ -33,3 +33,5 @@ export const user = createSlice({
         },
     } 
 })
+
+export default user.reducer;

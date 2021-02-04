@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux'
 export const MemberPage = () => {
     const [message, setMessage] = useState("");
     
-    const accessToken = useSelector((store) => store.user.login.accessToken);
-    const userId = useSelector((store) => store.user.login.userId);
+    const accessToken = useSelector((store) => store.Reducer.login.accessToken); 
+    const userId = useSelector((store) => store.Reducer.login.userId);
 
     const AUTH_URL = `https://pregnancy-week-by-week.herokuapp.com/login/${userId}/memberPage`
 
