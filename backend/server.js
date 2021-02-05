@@ -4,7 +4,6 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 import bcrypt from 'bcrypt'
-import { isEmail } from 'validator'
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/pregnancy-week-by-week"
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -21,7 +20,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     unique: true,
     required: true,
-    validate: [isEmail, 'invalid email']
   },
 
   password: {
@@ -113,7 +111,7 @@ app.post('/signup', async (request, response) => {
   }
   catch (err) {
     // signup failed
-    response.status(400).json({ message: 'Sorry, could not creat user', errors: err });
+    response.status(400).json({ message: 'Sorry, could not create user', errors: err });
   }
 })
 

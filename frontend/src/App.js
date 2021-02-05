@@ -5,7 +5,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit' // add create
 
 import './Styling/header.css'
 /* import { todos } from './Reducers/todos' */
-import user from './Reducers/user'
+import { user } from './Reducers/user'
 import { Home } from './Pages/Home'
 import { FirstTrimester } from './Pages/FirstTrimester'
 import { SecondTrimester } from './Pages/SecondTrimester'
@@ -16,7 +16,7 @@ import { Sidebar } from './Components/NavigationBar/Sidebar'
 import { Navbar } from './Components/NavigationBar/Navbar'
 
 
-const reducer = combineReducers({Reducer: user})
+const reducer = combineReducers({ user: user.reducer })
 const store = configureStore({ reducer });
 
 // USE THIS WITH TODOLISTS FOR LOCAL STORAGE

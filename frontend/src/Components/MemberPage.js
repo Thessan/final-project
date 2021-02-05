@@ -1,11 +1,18 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { user } from '../Reducers/user'
 
 export const MemberPage = () => {
     const [message, setMessage] = useState("");
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(user.actions.logout());
+    };
     
-    const accessToken = useSelector((store) => store.Reducer.login.accessToken); 
-    const userId = useSelector((store) => store.Reducer.login.userId);
+    const accessToken = useSelector((store) => store.user.login.accessToken); 
+    const userId = useSelector((store) => store.user.login.userId);
 
     const AUTH_URL = `https://pregnancy-week-by-week.herokuapp.com/login/${userId}/memberPage`
 
@@ -20,6 +27,12 @@ export const MemberPage = () => {
     return (
         <>
             <p>{message}</p>
+            <button type="submit"
+                value="submit"
+                onClick={handleLogout}
+                >
+                    Logout
+                </button>
         </>
     );
 };
