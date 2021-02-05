@@ -145,6 +145,34 @@ app.get('/login/:id/memberPage', (request, response) => {
   response.status(201).json(memberPage)
 });
 
+// GET all notes
+const Note = mongoose.model('Note', {
+  message: {
+    type: String,
+    required: true,
+    minlength: 5,
+    maxlength: 200
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+})
+
+// POST a new note
+app.get('/notes', async (request, response) => {
+  try {
+    const notes = await Note.find()
+    .sort({ createdAt: 'desc' })
+    .exec()
+    response.status(201).json(notes)
+  }
+  catch (err) {
+    response.status(400).json({message: 'Sorry, could not load notes' })
+  }
+})
+
+
 // start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`)

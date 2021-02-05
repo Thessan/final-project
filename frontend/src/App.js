@@ -12,6 +12,7 @@ import { SecondTrimester } from './Pages/SecondTrimester'
 import { ThirdTrimester } from './Pages/ThirdTrimester'
 /* import { TodoLists } from './Pages/TodoLists' */
 import { Login } from './Components/Login'
+import { MemberPage } from './Components/MemberPage'
 import { Sidebar } from './Components/NavigationBar/Sidebar'
 import { Navbar } from './Components/NavigationBar/Navbar'
 
@@ -56,6 +57,7 @@ export const App = () => {
             <Route path='/third-trimester' component={ThirdTrimester} />
             {/* <Route path='/todo-lists' component={TodoLists} /> */}
             <Route path='/login' component ={Login} />
+            <Route path='/login/member' component={MemberPage} />
           </Switch>
       </BrowserRouter>
       </Provider>
