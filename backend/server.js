@@ -109,7 +109,7 @@ app.post('/signup', async (request, response) => {
     }).save();
 
     // signup successful (but user will not be automatically logged in)
-    response.status(200).json({userID: user._id}); 
+    response.status(200).json({userID: user._id, accessToken: user.accessToken}); 
   }
   catch (err) {
     // signup failed

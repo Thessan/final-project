@@ -1,0 +1,31 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    margin: 30px; 
+}
+
+.login-form p {
+    font-size: 13px;
+    text-align: center;
+    margin: 10px;
+}
+
+.login-form a {
+    color: goldenrod;
+    font-weight: bold;
+}
+
+input {
+    margin: 5px;
+}
+
+.login-button {
+    margin: 15px 0 10px 0;
+}
+
+.to-signup {
+    font-size: 13px;
+    margin: 10px;
+}

@@ -12,15 +12,20 @@ export const Signup = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    console.log(username)
+    console.log(email)
+    console.log(password)
 
     const signupError = useSelector((store) => store.Reducer.login.statusMessage);
 
     const handleSignupSuccess = (signupResponse) => {
-        dispatch(user.actions.setUserId({ userId: signupResponse.userId }));
+        console.log("success", signupResponse)
+        dispatch(user.actions.setUserId({ userID: signupResponse.userId }));
         dispatch(user.actions.setStatusMessage({ statusMessage: 'Signup success' }));
     };
 
     const handleSignupFailed = (signupError) => {
+        console.log("error", signupError)
         dispatch(user.actions.setAccessToken({ accessToken: null }));
         dispatch(user.actions.setStatusMessage({ statusMessage: signupError }));
     };
@@ -39,6 +44,7 @@ export const Signup = () => {
 
     // fetch signup
     const onSignup = (event) => {
+    event.preventDefault()
 
         fetch(SIGNUP_URL, {
             method: 'POST',
@@ -100,8 +106,8 @@ export const Signup = () => {
                 <div className="signup-button" tabIndex="0">
                     <button type="submit"
                         value="submit"
-                        onClick={(event) => onSignup()}>
-                            Signup
+                        >
+                        Signup
                         </button>
                 </div>
                 {signupError && <p>{signupError}</p>}

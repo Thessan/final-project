@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import '../Styling/signup.css'
+import '../Styling/login.css'
 import user from '../Reducers/user'
 import { MemberPage } from '../Components/MemberPage'
 
@@ -41,7 +41,7 @@ export const Login = () => {
 
     // fetch login
     const onLogin = (event) => {
-        
+    event.preventDefault()
 
         fetch(LOGIN_URL, {
             method: 'POST',
@@ -70,7 +70,7 @@ export const Login = () => {
             <>
         <form onSubmit= {onLogin}>
             <div className="login-form" tabIndex="0">
-                <p>Welcome back! Please login</p>
+                <p>Login here</p>
                     <div className="input">
                         <input type="text"
                             id="username"
@@ -90,7 +90,7 @@ export const Login = () => {
                 <div className="login-button" tabIndex="0">
                     <button type="submit"
                         value="submit"
-                        onClick={(event) => onLogin()}>
+                        >
                             Login
                         </button>
                 </div>

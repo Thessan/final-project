@@ -3,18 +3,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    width: 280px;
     height: 300px;
     margin: auto;
     margin-top: 50px;
     padding: 20px;
-    border: solid goldenrod 5px;
 }
 
 .signup-form p {
     font-size: 13px;
     text-align: center;
     margin: 10px;
+}
+
+.signup-form a {
+    color: goldenrod;
+    font-weight: bold;
 }
 
 label {
