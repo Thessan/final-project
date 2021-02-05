@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import '../Styling/login.css'
-import user from '../Reducers/user'
+import { user } from '../Reducers/user'
 import { MemberPage } from '../Components/MemberPage'
 
 const LOGIN_URL = 'https://pregnancy-week-by-week.herokuapp.com/login'
@@ -15,9 +15,9 @@ export const Login = () => {
     const [password, setPassword] = useState('');
 
     // to access the users accessToken
-    const accessToken = useSelector((store) => store.Reducer.login.accessToken);       
+    const accessToken = useSelector((store) => store.user.login.accessToken);       
     // to displays error message when login fails
-    const loginError = useSelector((store) => store.Reducer.login.statusMessage);
+    const loginError = useSelector((store) => store.user.login.statusMessage);
     
 
     const handleLoginSuccess = (loginResponse) => {
