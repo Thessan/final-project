@@ -51,7 +51,22 @@ next();
 }
 )
 
+// for signup and login
 const User = mongoose.model('User', userSchema);
+
+// for notes
+const Note = mongoose.model('Note', {
+  message: {
+    type: String,
+    required: true,
+    minlength: 5,
+    maxlength: 200
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+})
 
 // defines the port where the app will be run on
 const port = process.env.PORT || 8080
@@ -145,21 +160,7 @@ app.get('/login/:id/memberPage', (request, response) => {
   response.status(201).json(memberPage)
 });
 
-// GET all notes
-const Note = mongoose.model('Note', {
-  message: {
-    type: String,
-    required: true,
-    minlength: 5,
-    maxlength: 200
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  }
-})
-
-// POST a new note
+// GET notes
 app.get('/notes', async (request, response) => {
   try {
     const notes = await Note.find()
@@ -169,6 +170,18 @@ app.get('/notes', async (request, response) => {
   }
   catch (err) {
     response.status(400).json({message: 'Sorry, could not load notes' })
+  }
+})
+
+// POST a new note
+app.post('/notes', async (request, response) => {
+  try {
+    const newNote = await new Note(request.body).save()
+    response.status(200).json(newNote)
+  }
+  catch (err) {
+    response.status(400).json({ message: 'Sorry could not save note to the database', errors: err.errors
+  })
   }
 })
 
