@@ -70,6 +70,8 @@ export const Signup = () => {
 
     return (
         <>
+            <h1 className="h1-signup">Pregnancy Week By Week</h1>
+            <div className="wrapper">
         <form onSubmit= {onSignup}>
             <div className="signup-form" tabIndex="0">
                 <p>Want to become a member? Sign up here!</p>
@@ -113,10 +115,11 @@ export const Signup = () => {
                 {signupError && <p>{signupError}</p>}
 
                 <div className="to-login">
-                    <p>Already a member? <Link to={`/login`}>Login here</Link></p>
+                    <p>Already a member? <Link to={`/`}>Login here</Link></p>
                 </div>
             </div>
         </form>
+        </div>
         </>
     )
 }

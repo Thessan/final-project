@@ -68,6 +68,8 @@ export const Login = () => {
 
         return (
             <>
+            <h1 className="h1-login">Pregnancy Week By Week</h1>
+                <div className="wrapper">
         <form onSubmit= {onLogin}>
             <div className="login-form" tabIndex="0">
                 <p>Login here</p>
@@ -97,10 +99,11 @@ export const Login = () => {
                 {loginError && <p>{loginError}</p>}
 
                 <div className="to-signup">
-                    <p>Not yet a member? <Link to={`/`}>Sign up here</Link></p>
+                    <p>Not yet a member? <Link to={`/signup`}>Sign up here</Link></p>
                 </div>
             </div>
         </form>
+        </div>
         </>
         );
     } else {

@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Signup } from '../Components/Signup'
+import { Login } from '../Components/Login'
 
-export const Home = () => {
+export const FirstPage = () => {
     return (
         <>
         <HomeContainer>
-            <Signup />
+            <Login />
         </HomeContainer>
         </>
     );
