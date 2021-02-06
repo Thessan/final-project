@@ -29,7 +29,6 @@ export const MemberPage = () => {
         });
     return (
         <>
-        
             <Sidebar />
             <Navbar />
             <h1 className="h1-member">Pregnancy Week By Week</h1>

@@ -3,18 +3,13 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { combineReducers, configureStore } from '@reduxjs/toolkit' // add createStore when adding localstorage for todolists
 
-/* import './Styling/header.css' */
-/* import { todos } from './Reducers/todos' */
 import { user } from './Reducers/user'
 import { FirstTrimester } from './Pages/FirstTrimester'
 import { SecondTrimester } from './Pages/SecondTrimester'
 import { ThirdTrimester } from './Pages/ThirdTrimester'
-/* import { TodoLists } from './Pages/TodoLists' */
 import { Login } from './Components/Login'
 import { Signup } from './Components/Signup'
 import { MemberPage } from './Components/MemberPage'
-/* import { Sidebar } from './Components/NavigationBar/Sidebar'
-import { Navbar } from './Components/NavigationBar/Navbar' */
 
 
 const reducer = combineReducers({ user: user.reducer })
@@ -47,16 +42,12 @@ export const App = () => {
     <>
     <Provider store={store}>
     <BrowserRouter>
-{/*       <Sidebar />
-      <Navbar />
-        <div className="header"></div> */}
           <Switch>
             <Route path='/' exact component={Login} />
             <Route path='/signup' component={Signup} />
             <Route path='/first-trimester' component={FirstTrimester} />
             <Route path='/second-trimester' component={SecondTrimester} />
             <Route path='/third-trimester' component={ThirdTrimester} />
-            {/* <Route path='/todo-lists' component={TodoLists} /> */}
             <Route path='/member' component={MemberPage} /> 
           </Switch>
       </BrowserRouter>

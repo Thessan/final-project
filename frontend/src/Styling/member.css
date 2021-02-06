@@ -12,9 +12,10 @@
 .h1-member {
     font-family: 'Cedarville Cursive', cursive;
     font-size: 30px;
-    color:goldenrod;
+    color: rgb(247, 205, 128);
+    text-shadow: 2px 2px rgb(168, 128, 24);
     text-align: center;
-    
+    padding-bottom: 5px;
 }
 
 /* TABLET VIEW */

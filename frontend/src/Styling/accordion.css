@@ -6,6 +6,13 @@
   flex-direction: column;
   margin: 30px;
 }
+.h1-accordion {
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 30px;
+  color: rgb(247, 205, 128);
+  text-shadow: 2px 2px rgb(168, 128, 24);
+  text-align: center;
+}
 
 /* Wraps first half of the accordions */
 .accordion-container-one {
@@ -81,6 +88,10 @@
 
 /* TABLET VIEW */ 
 @media screen and (min-width: 668px) {
+  .h1-accordion {
+    font-size: 50px;
+  }
+
   .accordion-wrapper {
     margin: 40px;
   }
@@ -100,6 +111,10 @@
 
 /* DESKTOP VIEW */
 @media screen and (min-width: 1024px) {
+    .h1-accordion {
+    font-size: 60px;
+  }
+  
   .accordion-wrapper {
     flex-direction: row;
     margin: 50px;

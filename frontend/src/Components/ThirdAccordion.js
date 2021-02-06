@@ -1,12 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 
+import { Sidebar } from './NavigationBar/Sidebar'
+import { Navbar } from './NavigationBar/Navbar'
 import { Accordion } from './Accordion'
 import '../Styling/accordion.css'
 
 export function ThirdAccordion() {
     
     return (
+        <>
+        <Sidebar />
+        <Navbar />
+        <h1 className="h1-accordion">Pregnancy Week By Week</h1>
         <section className="accordion-wrapper">
         <div className="accordion-container-cne">
             <Accordion
@@ -116,8 +123,13 @@ export function ThirdAccordion() {
             />
         </div>
         </section>
+        </>
     );
 }
 
     const rootElement = document.getElementById("root");
-    ReactDOM.render(<ThirdAccordion />, rootElement);
+    ReactDOM.render((
+        <BrowserRouter>
+            <ThirdAccordion />
+            </BrowserRouter>)
+    , rootElement);
