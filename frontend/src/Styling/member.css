@@ -2,5 +2,31 @@
     background-image: url(./yellow-background.jpg);
     background-size: cover;
     height: 100vh;
+    width: auto;
 }
 
+.member-wrapper {
+    display: flex;
+}
+
+.h1-member {
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 30px;
+    color:goldenrod;
+    text-align: center;
+    
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 668px) {
+    .h1-member {
+        font-size: 50px;
+    }
+}
+
+/* DESKTOP VIEW */
+@media screen and (min-width: 1024px) {
+    .h1-member {
+        font-size: 60px;
+    }
+}

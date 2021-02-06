@@ -6,6 +6,7 @@ import { NavbarData } from './NavbarData'
 
 export const Navbar = () => {
     return (
+        <>
         <div className="navbar">
                 {/* mapping over the items from NavbarData */}
                 {NavbarData.map((item, index) => {
@@ -19,5 +20,6 @@ export const Navbar = () => {
                     )
                 })}
         </div>
+        </>
     );
 }

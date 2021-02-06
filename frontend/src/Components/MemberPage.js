@@ -29,9 +29,12 @@ export const MemberPage = () => {
         });
     return (
         <>
+        
             <Sidebar />
             <Navbar />
+            <h1 className="h1-member">Pregnancy Week By Week</h1>
             <div className="member-background">
+                <div className="member-wrapper">
             <p>{message}</p>
             <button type="submit"
                 value="submit"
@@ -39,6 +42,7 @@ export const MemberPage = () => {
                 >
                     Logout
                 </button>
+                </div>
         </div>
         </>
     );

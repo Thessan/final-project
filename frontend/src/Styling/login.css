@@ -11,6 +11,8 @@
     text-shadow: 2px 2px rgb(168, 128, 24);
     text-align: center;
     padding-top: 50px;
+    width: 250px;
+    margin: auto;
 }
 
 .wrapper {
@@ -60,6 +62,7 @@ input {
 @media screen and (min-width: 668px) {
     .h1-login {
         font-size: 50px;
+        width: auto;
     }
 }
 
