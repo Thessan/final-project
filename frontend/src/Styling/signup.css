@@ -1,6 +1,7 @@
-body {
+.signup-background {
     background-image: url(./yellow-background.jpg);
     background-size: cover;
+    height: 100vh;
 }
 
 .h1-signup {

@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
+import '../Styling/member.css'
 import { user } from '../Reducers/user'
+import { Sidebar } from '../Components/NavigationBar/Sidebar'
+import { Navbar } from '../Components/NavigationBar/Navbar'
 
 export const MemberPage = () => {
     const [message, setMessage] = useState("");
@@ -14,7 +17,7 @@ export const MemberPage = () => {
     const accessToken = useSelector((store) => store.user.login.accessToken); 
     const userId = useSelector((store) => store.user.login.userId);
 
-    const AUTH_URL = `https://pregnancy-week-by-week.herokuapp.com/login/${userId}/memberPage`
+    const AUTH_URL = `https://pregnancy-week-by-week.herokuapp.com/login/${userId}/member`
 
     fetch(AUTH_URL, {
         method: "GET",
@@ -26,6 +29,9 @@ export const MemberPage = () => {
         });
     return (
         <>
+            <Sidebar />
+            <Navbar />
+            <div className="member-background">
             <p>{message}</p>
             <button type="submit"
                 value="submit"
@@ -33,6 +39,7 @@ export const MemberPage = () => {
                 >
                     Logout
                 </button>
+        </div>
         </>
     );
 };

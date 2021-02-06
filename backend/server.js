@@ -153,11 +153,11 @@ app.post('/login', async (request, response) => {
 // AUTHENTICATED ENDPOINT after login
 // this endpoint is only accessible after user has logged in with
 // valid username, password and accessToken
-app.get('/login/:id/memberPage', authenticateUser);
-app.get('/login/:id/memberPage', (request, response) => {
+app.get('/login/:id/member', authenticateUser);
+app.get('/login/:id/member', (request, response) => {
 
-  const memberPage = `Welcome, ${request.user.username}, you are now logged in.`
-  response.status(201).json(memberPage)
+  const member = `Welcome, ${request.user.username}, you are now logged in.`
+  response.status(201).json(member)
 });
 
 // GET notes

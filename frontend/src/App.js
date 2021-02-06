@@ -57,7 +57,7 @@ export const App = () => {
             <Route path='/second-trimester' component={SecondTrimester} />
             <Route path='/third-trimester' component={ThirdTrimester} />
             {/* <Route path='/todo-lists' component={TodoLists} /> */}
-            <Route path='/login/member' component={MemberPage} /> 
+            <Route path='/member' component={MemberPage} /> 
           </Switch>
       </BrowserRouter>
       </Provider>

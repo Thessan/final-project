@@ -67,7 +67,7 @@ export const Login = () => {
     if (!accessToken) {
 
         return (
-            <>
+            <div className="login-background">
             <h1 className="h1-login">Pregnancy Week By Week</h1>
                 <div className="wrapper">
         <form onSubmit= {onLogin}>
@@ -104,7 +104,7 @@ export const Login = () => {
             </div>
         </form>
         </div>
-        </>
+        </div>
         );
     } else {
         return <MemberPage /> 

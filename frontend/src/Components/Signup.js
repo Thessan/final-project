@@ -69,7 +69,7 @@ export const Signup = () => {
     }
 
     return (
-        <>
+        <div className="signup-background">
             <h1 className="h1-signup">Pregnancy Week By Week</h1>
             <div className="wrapper">
         <form onSubmit= {onSignup}>
@@ -120,7 +120,7 @@ export const Signup = () => {
             </div>
         </form>
         </div>
-        </>
+        </div>
     )
 }
 
