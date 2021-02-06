@@ -34,13 +34,15 @@ export const NavbarData = [
         className: 'navbar-text'
     },
 
- /*    {
-        title: 'Login',
-        path: '/login',
-        icon: <IoIcons.IoIosUnlock />,
+    {
+        title: 'Notes',
+        path: '/notes',
+        icon: <GoIcons.GoPencil />,
         className: 'navbar-text'
-    }, */
-   /*  {
+    },
+
+
+/*  {
         title: 'Todo Lists',
         path: '/todo-lists',
         icon: <FaIcons.FaListUl />,

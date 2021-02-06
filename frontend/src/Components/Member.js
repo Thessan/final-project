@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import '../Styling/member.css'
 import { user } from '../Reducers/user'
-import { Sidebar } from '../Components/NavigationBar/Sidebar'
-import { Navbar } from '../Components/NavigationBar/Navbar'
+import { Sidebar } from './NavigationBar/Sidebar'
+import { Navbar } from './NavigationBar/Navbar'
 
-export const MemberPage = () => {
+export const Member = () => {
     const [message, setMessage] = useState("");
     const dispatch = useDispatch();
 

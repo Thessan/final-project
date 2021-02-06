@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import '../Styling/login.css'
 import { user } from '../Reducers/user'
-import { MemberPage } from '../Components/MemberPage'
+import { Member } from './Member'
 
 const LOGIN_URL = 'https://pregnancy-week-by-week.herokuapp.com/login'
 
@@ -107,7 +107,7 @@ export const Login = () => {
         </div>
         );
     } else {
-        return <MemberPage /> 
+        return <Member /> 
     }
 
 
