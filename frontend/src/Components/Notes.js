@@ -76,13 +76,14 @@ export const Notes = () => {
                 </button>
             </form>
         </div>
+
         <section className="note-wrapper">
         <section className="all-notes-container">
             {existingNote.map(newNote => { // returns a div for each note
                 return(                    
                     <div className="note-container" key={newNote._id}>
                         <p className="note-text">{newNote.message}</p>
-                        <p className="note-added">Added: {moment(newNote.date).format("MMM Do YYYY")}, {moment(newNote.time).format("h:mm:ss A")}</p>
+                        <p className="note-added">Added: {moment(newNote.createdAt).format("MMM Do YYYY")}, {moment(newNote.createdAt).format("h:mm:ss A")}</p>
                         <button className="delete-button" type="button" /* onClick={() => onDelete(newNote.id)} */> <p>delete</p></button>
                     </div>
                     

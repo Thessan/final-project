@@ -1,10 +1,10 @@
-import express, { response } from 'express'
+import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 import bcrypt from 'bcrypt'
-import { time } from 'console'
+
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/pregnancy-week-by-week"
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
