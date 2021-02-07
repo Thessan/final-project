@@ -62,8 +62,6 @@ const Note = mongoose.model('Note', {
     required: true,
     minlength: 5,
     maxlength: 200,
-    date: String,
-    time: String
   },
 })
 
