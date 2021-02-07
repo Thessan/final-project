@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import moment from 'moment'
 
 const notesURL= "https://pregnancy-week-by-week.herokuapp.com/notes"
 
@@ -35,42 +36,42 @@ export const Notes = () => {
     }
 
     return (
-            <>
-        <section className="newThoughtContainer">
-        <form onSubmit={postNote}>
-            <label>
-            <p>What week are you in now? How are you feeling?</p>
-                <textarea 
-                placeholder="Write a new note..."
-                rows="3"
-                onChange={event => setNewNote(event.target.value)}
-                value={newNote}>
-                </textarea>
-        </label> 
+        <>
+        <section className="new-note-container">
+            <form onSubmit= {postNote}>
+                <label>
+                    <p>What week are you in now? How are you feeling?</p>
+                        <textarea 
+                            placeholder="Write a new note..."
+                            rows="3"
+                            onChange={(event) => setNewNote(event.target.value)}
+                            value={newNote}>
+                        </textarea>
+                </label> 
 
-        <p className="characterCount"> 
-                {newNote.length} / 400
-        </p>
+                <p className="character-count"> 
+                    {newNote.length} / 400
+                </p>
 
-            <button className="send-note"
-            type="submit"
-            disabled={ // button will be disabled if the input field is empty, less than 5 characters or more than 400 characters
-                newNote.length < 5 || newNote.length > 400 ? true : false}>
-                <p>Add note</p>
-            </button>
-        </form>
+                <button className="send-note"
+                    type="submit"
+                    disabled={ // button will be disabled if the input field is empty, less than 5 characters or more than 400 characters
+                    newNote.length < 5 || newNote.length > 400 ? true : false}>
+                        <p>Add note</p>
+                </button>
+            </form>
         </section>
 
-        <section className="allRepliesContainer">
-            {existingNote.map(note => { // returns a div for each note
+        <section className="all-notes-container">
+            {existingNote.map(newNote => { // returns a div for each note
                 return(                    
-                    <div className="replyContainer" key={note._id}>
-                        <p className="replyText">{note.note}</p>
+                    <div className="notes-container" key={newNote._id}>
+                        <p className="note-text">{newNote.message}</p>
+                        <p>Added: {moment(newNote.date).format("MMM Do, YYYY")}</p>
                     </div>
                 )
             })}
         </section>
-</>
+        </>
     )
-
 }
