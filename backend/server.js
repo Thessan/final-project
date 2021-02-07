@@ -63,6 +63,10 @@ const Note = mongoose.model('Note', {
     minlength: 5,
     maxlength: 200,
   },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 })
 
 // defines the port where the app will be run on
