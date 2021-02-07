@@ -1,11 +1,23 @@
 import React, {useState, useEffect} from 'react'
+/* import { useDispatch } from 'react-redux' */
 import moment from 'moment'
+/* 
+import { user } from '../Reducers/user' */
+import '../Styling/notes.css'
+import { Sidebar } from './NavigationBar/Sidebar'
+import { Navbar } from './NavigationBar/Navbar'
 
 const notesURL= "https://pregnancy-week-by-week.herokuapp.com/notes"
 
 export const Notes = () => {
     const [existingNote, setExistingNote] = useState([]) // the existing notes in the list
     const [newNote, setNewNote] = useState('') // new note that's being posted
+
+/*     const dispatch = useDispatch();
+
+    const onDelete = id => {
+        dispatch(user.actions.removeNote(id))
+    } */
 
     // fetch existing notes from the API
     const fetchNotes = () => {
@@ -19,7 +31,7 @@ export const Notes = () => {
         fetchNotes();
     }, []);
 
-    // post a new note from 
+    
     const postNote = (event) => {
         event.preventDefault();
         
@@ -37,7 +49,10 @@ export const Notes = () => {
 
     return (
         <>
-        <section className="new-note-container">
+        <Sidebar />
+        <Navbar />
+        <h1 className="h1-notes">Pregnancy Week By Week</h1>
+            <div className="new-note-container">
             <form onSubmit= {postNote}>
                 <label>
                     <p>What week are you in now? How are you feeling?</p>
@@ -60,17 +75,20 @@ export const Notes = () => {
                         <p>Add note</p>
                 </button>
             </form>
-        </section>
-
+        </div>
+        <section className="note-wrapper">
         <section className="all-notes-container">
             {existingNote.map(newNote => { // returns a div for each note
                 return(                    
-                    <div className="notes-container" key={newNote._id}>
+                    <div className="note-container" key={newNote._id}>
                         <p className="note-text">{newNote.message}</p>
-                        <p>Added: {moment(newNote.date).format("MMM Do, YYYY")}</p>
+                        <p className="note-added">Added: {moment(newNote.date).format("MMM Do YYYY")}, {moment(newNote.time).format("h:mm:ss A")}</p>
+                        <button className="delete-button" type="button" /* onClick={() => onDelete(newNote.id)} */> <p>delete</p></button>
                     </div>
+                    
                 )
             })}
+        </section>
         </section>
         </>
     )

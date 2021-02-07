@@ -4,6 +4,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 import bcrypt from 'bcrypt'
+import { time } from 'console'
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/pregnancy-week-by-week"
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -56,16 +57,14 @@ const User = mongoose.model('User', userSchema);
 
 // for notes
 const Note = mongoose.model('Note', {
-  message: {
+  newNote: {
     type: String,
     required: true,
     minlength: 5,
-    maxlength: 200
+    maxlength: 200,
+    date: String,
+    time: String
   },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  }
 })
 
 // defines the port where the app will be run on
