@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { response } from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import mongoose from 'mongoose'
@@ -186,6 +186,16 @@ app.post('/notes', async (request, response) => {
   }
 })
 
+// DELETE a note
+app.delete('/notes/:notesId', authenticateUser);
+app.delete('/notes/:notesId', async (request, response) => {
+  try { 
+    await Note.deleteOne({ _id: req.params.notesId });
+    response.status(200).json({ success: 'Note successfully deleted!' });
+  } catch (error) {
+    response.status(500).json({ message: 'Could not delete note' });
+  };
+});
 
 // start the server
 app.listen(port, () => {

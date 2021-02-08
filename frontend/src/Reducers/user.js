@@ -5,7 +5,6 @@ const initialState = {
         accessToken: localStorage.accessToken || null,
         userId: 0,
         statusMessage: "",
-        /* removeNote: "" */
     },
 };
 
@@ -32,8 +31,5 @@ export const user = createSlice({
             state.login.statusMessage = "";
             localStorage.removeItem('accessToken')
         },
-/*         removeNote: (store, action) => {
-
-        } */
     } 
 })

@@ -1,23 +1,17 @@
 import React, {useState, useEffect} from 'react'
-/* import { useDispatch } from 'react-redux' */
 import moment from 'moment'
-/* 
-import { user } from '../Reducers/user' */
+
 import '../Styling/notes.css'
 import { Sidebar } from './NavigationBar/Sidebar'
 import { Navbar } from './NavigationBar/Navbar'
 
 const notesURL= "https://pregnancy-week-by-week.herokuapp.com/notes"
+const deleteURL= "https://pregnancy-week-by-week.herokuapp.com/notes/:notesId"
 
 export const Notes = () => {
     const [existingNote, setExistingNote] = useState([]) // the existing notes in the list
     const [newNote, setNewNote] = useState('') // new note that's being posted
 
-/*     const dispatch = useDispatch();
-
-    const onDelete = id => {
-        dispatch(user.actions.removeNote(id))
-    } */
 
     // fetch existing notes from the API
     const fetchNotes = () => {
@@ -44,6 +38,15 @@ export const Notes = () => {
         .then(() => { 
           fetchNotes(); // updates the list of posted notes
           setNewNote(''); // resets the textarea
+        })
+    }
+
+    const deleteNote = (event) => {
+        event.preventDefault();
+        fetch(deleteURL, {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ })
         })
     }
 
@@ -84,7 +87,12 @@ export const Notes = () => {
                     <div className="note-container" key={newNote._id}>
                         <p className="note-text">{newNote.message}</p>
                         <p className="note-added">Added: {moment(newNote.createdAt).format("MMM Do YYYY")}, {moment(newNote.createdAt).format("h:mm:ss A")}</p>
-                        <button className="delete-button" type="button" /* onClick={() => onDelete(newNote.id)} */> <p>delete</p></button>
+                        <button className="delete-button"
+                            type="button"
+                            onClick={deleteNote}
+                            > 
+                                <p>delete</p>
+                        </button>
                     </div>
                     
                 )
