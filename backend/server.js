@@ -190,12 +190,13 @@ app.post('/notes', async (request, response) => {
 app.delete('/notes/:notesId', authenticateUser);
 app.delete('/notes/:notesId', async (request, response) => {
   try { 
-    await Note.deleteOne({ _id: req.params.notesId });
+    await Note.deleteOne({ _id: request.params.notesId });
     response.status(200).json({ success: 'Note successfully deleted!' });
   } catch (error) {
     response.status(500).json({ message: 'Could not delete note' });
   };
 });
+
 
 // start the server
 app.listen(port, () => {
