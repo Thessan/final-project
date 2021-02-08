@@ -4,6 +4,29 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 import bcrypt from 'bcrypt'
+import dotenv from 'dotenv';
+import cloudinaryFramework from 'cloudinary'
+import multer from 'multer'
+import cloudinaryStorage from 'multer-storage-cloudinary'
+
+dotenv.config();
+
+const cloudinary = cloudinaryFramework.v2; 
+cloudinary.config({
+  cloud_name: 'dslu94lzy', // what I get from cloudinary
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+})
+
+const storage = cloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: 'noteImages',
+    allowedFormats: ['jpg', 'png', 'jpeg'],
+    transformation: [{ width: 300, height: 300, crop: 'limit' }],
+  },
+})
+const parser = multer({ storage })
 
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/pregnancy-week-by-week"
@@ -66,8 +89,13 @@ const Note = mongoose.model('Note', {
   createdAt: {
     type: Date,
     default: Date.now
+  },
+  noteImage: {
+    name: String,
+    imageURL: String
   }
 })
+
 
 // defines the port where the app will be run on
 const port = process.env.PORT || 8080
@@ -186,7 +214,19 @@ app.post('/notes', async (request, response) => {
   }
 })
 
+// POST image with note
+app.post('/notes/image', parser.single('image'), async (request, response) => {
+	response.json({ imageUrl: request.file.path, imageId: request.file.filename})
+})
 
+app.post('/notes/image', parser.single('image'), async (request, response) => {
+  try {
+    const image = await new Image({ name: request.body.filename, imageUrl: request.file.path }).save()
+    response.json(image)
+  } catch (err) {
+    response.status(400).json({ errors: err.errors })
+  }
+})
 
 // DELETE a note
 app.delete('/notes/:notesId', authenticateUser);
