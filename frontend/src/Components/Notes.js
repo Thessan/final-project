@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { useSelector } from 'react-redux'
 import moment from 'moment'
 
 import '../Styling/notes.css'
@@ -6,12 +7,12 @@ import { Sidebar } from './NavigationBar/Sidebar'
 import { Navbar } from './NavigationBar/Navbar'
 
 const notesURL= "https://pregnancy-week-by-week.herokuapp.com/notes"
-const deleteURL= "https://pregnancy-week-by-week.herokuapp.com/notes/:notesId"
 
 export const Notes = () => {
     const [existingNote, setExistingNote] = useState([]) // the existing notes in the list
     const [newNote, setNewNote] = useState('') // new note that's being posted
 
+    const accessToken = useSelector((store) => store.user.login.accessToken);
 
     // fetch existing notes from the API
     const fetchNotes = () => {
@@ -41,13 +42,11 @@ export const Notes = () => {
         })
     }
 
-    const deleteNote = (event) => {
-        event.preventDefault();
+    const deleteNote = (_id) => {
 
-        fetch(deleteURL, {
+        fetch(`https://pregnancy-week-by-week.herokuapp.com/notes/${_id}`, {
             method: 'DELETE',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({message: deleteNote })
+            headers: {'Content-Type': 'application/json', 'Authorization': accessToken},
         })
 
         .then((response) => {
@@ -56,6 +55,10 @@ export const Notes = () => {
             }
             return response.json();
         })
+        .then(() => { 
+            fetchNotes(); // after note is deleted the page updates the list of remaining existing notes
+        })
+
     }
 
     return (
@@ -97,7 +100,7 @@ export const Notes = () => {
                         <p className="note-added">Added: {moment(newNote.createdAt).format("MMM Do YYYY")}, {moment(newNote.createdAt).format("h:mm:ss A")}</p>
                         <button className="delete-button"
                             type="button"
-                            onClick={deleteNote}
+                            onClick={ () => {deleteNote(newNote._id)}}
                             > 
                                 <p>delete</p>
                         </button>

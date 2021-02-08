@@ -186,6 +186,8 @@ app.post('/notes', async (request, response) => {
   }
 })
 
+
+
 // DELETE a note
 app.delete('/notes/:notesId', authenticateUser);
 app.delete('/notes/:notesId', async (request, response) => {
@@ -196,6 +198,8 @@ app.delete('/notes/:notesId', async (request, response) => {
     response.status(500).json({ message: 'Could not delete note' });
   };
 });
+
+
 
 
 // start the server
