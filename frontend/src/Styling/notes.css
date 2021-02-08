@@ -21,6 +21,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    background-image: url(./yellow-background.jpg);
+    background-size: contain;
 }
 
 .all-notes-container {
@@ -33,6 +35,7 @@
     width: 300px;
     margin: 20px;
     padding: 10px;
+    background-color: rgba(255, 255, 255, 0.863);
     border: goldenrod solid 4px;
 }
 

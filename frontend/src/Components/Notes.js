@@ -43,10 +43,17 @@ export const Notes = () => {
 
     const deleteNote = (event) => {
         event.preventDefault();
+
         fetch(deleteURL, {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ })
+            body: JSON.stringify({message: deleteNote })
+        })
+        .then((response) => {
+            if (!response.ok) {
+            throw new Error('Could not delete note');
+            }
+            return response.json();
         })
     }
 
@@ -73,7 +80,7 @@ export const Notes = () => {
 
                 <button className="send-note"
                     type="submit"
-                    disabled={ // button will be disabled if the input field is empty, less than 5 characters or more than 400 characters
+                    disabled={ 
                     newNote.length < 5 || newNote.length > 400 ? true : false}>
                         <p>Add note</p>
                 </button>
@@ -82,7 +89,7 @@ export const Notes = () => {
 
         <section className="note-wrapper">
         <section className="all-notes-container">
-            {existingNote.map(newNote => { // returns a div for each note
+            {existingNote.map(newNote => { 
                 return(                    
                     <div className="note-container" key={newNote._id}>
                         <p className="note-text">{newNote.message}</p>
