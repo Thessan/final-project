@@ -51,7 +51,7 @@ export const Notes = () => {
         
         fetch(notesURL, {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
+            headers: {'Content-Type': 'application/json', 'Authorization': accessToken},
             body: JSON.stringify({newNote:newNote})
         })
         .then (response => response.json())
