@@ -52,7 +52,7 @@ export const Notes = () => {
         fetch(notesURL, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({message: newNote})
+            body: JSON.stringify({newNote:newNote})
         })
         .then (response => response.json())
         .then(() => { 
@@ -85,7 +85,7 @@ export const Notes = () => {
         <Sidebar />
         <Navbar />
         <h1 className="h1-notes">Pregnancy Week By Week</h1>
-            <section className="wrapper">
+            <section className="notes-background">
                 <div className="new-note-container">
             <form onSubmit= {postNote}>
                 <label>
@@ -131,7 +131,7 @@ export const Notes = () => {
             {existingNote.map(newNote => { 
                 return(                    
                     <div className="note-container" key={newNote._id}>
-                        <p className="note-text">{newNote.message}</p>
+                        <p className="note-text">{newNote.newNote}</p>
                         <p className="note-added">Added: {moment(newNote.createdAt).format("MMM Do YYYY")}, {moment(newNote.createdAt).format("h:mm:ss A")}</p>
                         <button className="delete-button"
                             type="button"

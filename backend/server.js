@@ -202,8 +202,10 @@ app.get('/notes', async (request, response) => {
   }
 })
 
+
 // POST a new note
-app.post('/notes', async (request, response) => {
+app.post('/notes', authenticateUser)
+app.post('notes/', async (request, response) => {
   try {
     const newNote = await new Note(request.body).save()
     response.status(200).json(newNote)
