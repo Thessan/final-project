@@ -215,19 +215,19 @@ app.post('/notes', async (request, response) => {
   }
 })
 
+
+
 // POST image with note
 app.post('/notes/image', parser.single('image'), async (request, response) => {
-	response.json({ imageUrl: request.file.path, imageId: request.file.filename})
-})
-
-app.post('/notes/image', parser.single('image'), async (request, response) => {
   try {
-    const image = await new Note({ name: request.body.filename, imageUrl: request.file.path }).save()
+    const image = await new Note({ noteImage: request.file.path }).save()
     response.json(image)
   } catch (err) {
     response.status(400).json({ errors: err.errors })
   }
 })
+
+
 
 // DELETE a note
 app.delete('/notes/:notesId', authenticateUser);

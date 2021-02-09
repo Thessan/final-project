@@ -17,9 +17,11 @@ export const Notes = () => {
 
     const fileInput = useRef() // for image upload
 
+
+
     // upload an image
-    const uploadImage = (event) => {
-        event.preventDefault()
+    const handleFormSubmit = (event) => {
+        
         const formData = new FormData()
         formData.append('image', fileInput.current.files[0])
     
@@ -31,7 +33,20 @@ export const Notes = () => {
         .then((json) => {
         console.log(json)
         })
+
+        fetch(notesURL, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'Authorization': accessToken},
+            body: JSON.stringify({newNote:newNote})
+        })
+        .then (response => response.json())
+        .then(() => { 
+          fetchNotes(); // updates the list of posted notes
+          setNewNote(''); // resets the textarea
+        })
     }
+
+
 
     // fetch existing notes from the API
     const fetchNotes = () => {
@@ -103,17 +118,23 @@ export const Notes = () => {
                 </p>
                     
 
-                {/* <form className="image-upload" onSubmit={handleFormSubmit}> */}
-                <input type="file"
-                ref={fileInput}
-                onChange={(event) => uploadImage(event.target.value)}
-                accept="image/png, image/jpeg, image/jpg"
-                />
 
-                {/* <button type="submit">
-                Submit
-                </button> */}
-            {/* </form> */}
+
+                <form onSubmit={handleFormSubmit}>
+                    <label>
+                    Image
+                    <input type="file" ref={fileInput} />
+                    </label>
+
+
+
+                    <button type="submit">
+                        Submit
+                    </button>
+                    </form>
+
+
+
 
 
                 <button className="add-note"
