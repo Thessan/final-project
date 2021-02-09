@@ -4,7 +4,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 import bcrypt from 'bcrypt'
-/* import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 import cloudinaryFramework from 'cloudinary'
 import multer from 'multer'
 import cloudinaryStorage from 'multer-storage-cloudinary'
@@ -26,7 +26,7 @@ const storage = cloudinaryStorage({
     transformation: [{ width: 300, height: 300, crop: 'limit' }],
   },
 })
-const parser = multer({ storage }) */
+const parser = multer({ storage })
 
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/pregnancy-week-by-week"
@@ -90,10 +90,10 @@ const Note = mongoose.model('Note', {
     type: Date,
     default: Date.now
   },
-/*   noteImage: {
+  noteImage: {
     name: String,
     imageURL: String
-  } */
+  }
 })
 
 
@@ -216,7 +216,7 @@ app.post('/notes', async (request, response) => {
 })
 
 // POST image with note
-/* app.post('/notes/image', parser.single('image'), async (request, response) => {
+app.post('/notes/image', parser.single('image'), async (request, response) => {
 	response.json({ imageUrl: request.file.path, imageId: request.file.filename})
 })
 
@@ -227,7 +227,7 @@ app.post('/notes/image', parser.single('image'), async (request, response) => {
   } catch (err) {
     response.status(400).json({ errors: err.errors })
   }
-}) */
+})
 
 // DELETE a note
 app.delete('/notes/:notesId', authenticateUser);

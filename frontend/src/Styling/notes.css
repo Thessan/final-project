@@ -1,3 +1,15 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(./sunflower.jpg);
+    background-size: cover;
+    margin-top: 10px;
+    padding-top: 15px;
+    border: solid blue 2px;
+}
+
 .h1-notes {
     font-family: 'Cedarville Cursive', cursive;
     font-size: 30px;
@@ -6,23 +18,57 @@
     text-align: center;
 }
 
+/* wraps new-note-text, textarea, image upload & button */
 .new-note-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 800px;
+    flex-direction: column;
+    width: 300px;
     margin: auto;
-    border: magenta solid 2px;
+    padding: 2%;
+    background-color: rgba(255, 255, 255, 0.863);
+    border: rgba(218, 165, 32, 0.747) outset 4px;
+}
+
+.new-note-text {
+    color: black;
+    font-size: 13px;
+    margin: 5px;
+}
+
+textarea {
+    font-family: 'Cedarville Cursive', cursive;
+    color: goldenrod;
+    font-size: 13px;
+    width: 270px;
+    padding-left: 5px;
+    margin-left: 5px;
+}
+
+::placeholder {
+    color: goldenrod;
+}
+
+.character-count {
+    font-size: 10px;
+    color: goldenrod;
+    font-weight: 600;
+    text-align: end;
+    padding-right: 2px;
+}
+.image-upload {
+    border: solid orange 1px;
 }
 
 
+
+/* wraps all existing notes */
 .note-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
-    background-image: url(./yellow-background.jpg);
-    background-size: contain;
+    height: 100vh;
+    
 }
 
 .all-notes-container {

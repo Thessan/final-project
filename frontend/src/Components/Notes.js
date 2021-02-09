@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import moment from 'moment'
 
@@ -7,7 +7,7 @@ import { Sidebar } from './NavigationBar/Sidebar'
 import { Navbar } from './NavigationBar/Navbar'
 
 const notesURL= "https://pregnancy-week-by-week.herokuapp.com/notes"
-/* const imageURL= "https://pregnancy-week-by-week.herokuapp.com/notes/image" */
+const imageURL= "https://pregnancy-week-by-week.herokuapp.com/notes/image"
 
 export const Notes = () => {
     const [existingNote, setExistingNote] = useState([]) // the existing notes in the list
@@ -15,11 +15,11 @@ export const Notes = () => {
 
     const accessToken = useSelector((store) => store.user.login.accessToken);
 
-/*     const fileInput = useRef() */ // for image upload
+    const fileInput = useRef() // for image upload
 
     // upload an image
-/*     const handleFormSubmit = (e) => {
-        e.preventDefault()
+    const uploadImage = (event) => {
+        event.preventDefault()
         const formData = new FormData()
         formData.append('image', fileInput.current.files[0])
     
@@ -31,7 +31,7 @@ export const Notes = () => {
         .then((json) => {
         console.log(json)
         })
-    } */
+    }
 
     // fetch existing notes from the API
     const fetchNotes = () => {
@@ -85,10 +85,11 @@ export const Notes = () => {
         <Sidebar />
         <Navbar />
         <h1 className="h1-notes">Pregnancy Week By Week</h1>
-            <div className="new-note-container">
+            <section className="wrapper">
+                <div className="new-note-container">
             <form onSubmit= {postNote}>
                 <label>
-                    <p>What week are you in now? How are you feeling?</p>
+                    <p className="new-note-text">What week are you in? How are you feeling?</p>
                         <textarea 
                             placeholder="Write a new note..."
                             rows="3"
@@ -102,22 +103,26 @@ export const Notes = () => {
                 </p>
                     
 
-                <button className="send-note"
+                {/* <form className="image-upload" onSubmit={handleFormSubmit}> */}
+                <input type="file"
+                ref={fileInput}
+                onChange={(event) => uploadImage(event.target.value)}
+                accept="image/png, image/jpeg, image/jpg"
+                />
+
+                {/* <button type="submit">
+                Submit
+                </button> */}
+            {/* </form> */}
+
+
+                <button className="add-note"
                     type="submit"
                     disabled={ 
                     newNote.length < 5 || newNote.length > 400 ? true : false}>
                         <p>Add note</p>
                 </button>
             </form>
-
-{/*             <form onSubmit={handleFormSubmit}>
-
-        <input type="file" ref={fileInput} />
-
-      <button type="submit">
-        Submit
-      </button>
-    </form> */}
     
         </div>
 
@@ -138,6 +143,7 @@ export const Notes = () => {
                     
                 )
             })}
+        </section>
         </section>
         </section>
         </>
