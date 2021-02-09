@@ -12,20 +12,15 @@ export const Signup = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    console.log(username)
-    console.log(email)
-    console.log(password)
 
     const signupError = useSelector((store) => store.user.login.statusMessage);
 
     const handleSignupSuccess = (signupResponse) => {
-        console.log("success", signupResponse)
         dispatch(user.actions.setUserId({ userID: signupResponse.userId }));
         dispatch(user.actions.setStatusMessage({ statusMessage: 'Signup success' }));
     };
 
     const handleSignupFailed = (signupError) => {
-        console.log("error", signupError)
         dispatch(user.actions.setAccessToken({ accessToken: null }));
         dispatch(user.actions.setStatusMessage({ statusMessage: signupError }));
     };

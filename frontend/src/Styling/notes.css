@@ -10,8 +10,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 800px;
     margin: auto;
+    border: magenta solid 2px;
 }
 
 

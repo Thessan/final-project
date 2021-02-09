@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import moment from 'moment'
 
@@ -7,12 +7,31 @@ import { Sidebar } from './NavigationBar/Sidebar'
 import { Navbar } from './NavigationBar/Navbar'
 
 const notesURL= "https://pregnancy-week-by-week.herokuapp.com/notes"
+/* const imageURL= "https://pregnancy-week-by-week.herokuapp.com/notes/image" */
 
 export const Notes = () => {
     const [existingNote, setExistingNote] = useState([]) // the existing notes in the list
     const [newNote, setNewNote] = useState('') // new note that's being posted
 
     const accessToken = useSelector((store) => store.user.login.accessToken);
+
+/*     const fileInput = useRef() */ // for image upload
+
+    // upload an image
+/*     const handleFormSubmit = (e) => {
+        e.preventDefault()
+        const formData = new FormData()
+        formData.append('image', fileInput.current.files[0])
+    
+        fetch(imageURL, {
+            method: 'POST',
+            body: formData 
+        })
+        .then((response) => response.json())
+        .then((json) => {
+        console.log(json)
+        })
+    } */
 
     // fetch existing notes from the API
     const fetchNotes = () => {
@@ -26,7 +45,7 @@ export const Notes = () => {
         fetchNotes();
     }, []);
 
-    
+    // post a new note 
     const postNote = (event) => {
         event.preventDefault();
         
@@ -42,8 +61,8 @@ export const Notes = () => {
         })
     }
 
+    // delete a note
     const deleteNote = (_id) => {
-
         fetch(`https://pregnancy-week-by-week.herokuapp.com/notes/${_id}`, {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json', 'Authorization': accessToken},
@@ -56,7 +75,7 @@ export const Notes = () => {
             return response.json();
         })
         .then(() => { 
-            fetchNotes(); // after note is deleted the page updates the list of remaining existing notes
+            fetchNotes(); // after note is deleted the page refreshes with remaining existing notes
         })
 
     }
@@ -81,6 +100,7 @@ export const Notes = () => {
                 <p className="character-count"> 
                     {newNote.length} / 400
                 </p>
+                    
 
                 <button className="send-note"
                     type="submit"
@@ -89,6 +109,16 @@ export const Notes = () => {
                         <p>Add note</p>
                 </button>
             </form>
+
+{/*             <form onSubmit={handleFormSubmit}>
+
+        <input type="file" ref={fileInput} />
+
+      <button type="submit">
+        Submit
+      </button>
+    </form> */}
+    
         </div>
 
         <section className="note-wrapper">
