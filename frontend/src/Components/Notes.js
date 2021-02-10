@@ -38,7 +38,7 @@ export const Notes = () => {
     
         fetch(imageURL, {
             method: 'POST',
-            body: formData 
+            body: formData
         })
         .then((response) => response.json())
         .then((json) => {

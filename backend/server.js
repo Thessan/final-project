@@ -202,6 +202,17 @@ app.get('/notes', async (request, response) => {
   }
 })
 
+
+app.post('/notes', parser.single('image'), async (request, response) => {
+  try {
+    const image = await new Note({newNote: request.newNote, noteImage: request.file.path }).save()
+    response.json(image)
+  } catch (err) {
+    response.status(400).json({ errors: err.errors })
+  }
+})
+
+/* 
 // POST a new note
 app.post('/notes', async (request, response) => {
   try {
@@ -215,8 +226,6 @@ app.post('/notes', async (request, response) => {
   }
 })
 
-
-
 // POST image with note
 app.post('/notes', parser.single('image'), async (request, response) => {
   try {
@@ -225,7 +234,7 @@ app.post('/notes', parser.single('image'), async (request, response) => {
   } catch (err) {
     response.status(400).json({ errors: err.errors })
   }
-})
+}) */
 
 
 
