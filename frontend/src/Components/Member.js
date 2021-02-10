@@ -25,7 +25,7 @@ export const Member = () => {
     })
         .then((response) => response.json())
         .then((json) => {
-            setMessage(json)
+            setMessage(json.message)
         });
     return (
         <>

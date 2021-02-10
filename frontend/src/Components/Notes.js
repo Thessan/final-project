@@ -114,17 +114,20 @@ export const Notes = () => {
                         {newNote.length} / 400
                         </p>
 
+                        
                         <label>
-                        Image
-                        <input type="file" ref={fileInput} />
+                        <p className="label-text">Upload an image</p>
+                        <input className="choose-image" type="file" ref={fileInput} />
                         </label> 
-
+                        
+                
                 <button className="add-note"
                     type="submit"
                     disabled={ 
                     newNote.length < 5 || newNote.length > 400 ? true : false}>
                         <p>Add note</p>
                 </button>
+
             </form>
 
                 {/* <form onSubmit={postNote}>
