@@ -203,10 +203,18 @@ app.get('/notes', async (request, response) => {
 })
 
 
-app.post('/notes', parser.single('image'), async (request, response) => {
+/* app.post('/notes', parser.single('image'), async (request, response) => {
   try {
     const image = await new Note({newNote: request.newNote, noteImage: request.file.path }).save()
     response.json(image)
+  } catch (err) {
+    response.status(400).json({ errors: err.errors })
+  }
+}) */
+
+app.post('/notes', parser.single('image'), async (request, response) => {
+  try {
+    response.json(request.file.path )
   } catch (err) {
     response.status(400).json({ errors: err.errors })
   }
