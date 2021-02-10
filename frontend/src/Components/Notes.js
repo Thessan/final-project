@@ -133,8 +133,6 @@ export const Notes = () => {
                 {/* <form onSubmit={postNote}>
                     
 
-
-
                     <button type="submit">
                         Submit
                     </button>

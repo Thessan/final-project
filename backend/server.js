@@ -190,7 +190,6 @@ app.get('/login/:id/member', (request, response) => {
 });
 
 // GET notes
-app.get('/notes', authenticateUser);
 app.get('/notes', async (request, response) => {
   try {
     const notes = await Note.find()
@@ -203,7 +202,7 @@ app.get('/notes', async (request, response) => {
   }
 })
 
-app.post('/notes', authenticateUser);
+
 app.post('/notes', parser.single('image'), async (request, response) => {
   try {
     const image = await new Note({newNote: request.newNote, noteImage: request.file.path }).save()
