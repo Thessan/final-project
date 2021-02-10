@@ -21,7 +21,7 @@
 .new-note-container {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 305px;
     margin: 20px;
     padding: 2%;
     background-color: rgba(255, 255, 255, 0.863);
@@ -29,8 +29,9 @@
 }
 
 .new-note-text {
-    color: black;
+    color: darkslategray;
     font-size: 13px;
+    font-weight: 500;
     margin: 5px;
     padding-bottom: 3px;
 }
@@ -39,7 +40,7 @@ textarea {
     font-family: 'Cedarville Cursive', cursive;
     color: goldenrod;
     font-size: 13px;
-    width: 270px;
+    width: 273px;
     padding-left: 5px;
     margin-left: 5px;
 }
@@ -53,7 +54,7 @@ textarea::placeholder {
     color: goldenrod;
     font-weight: 600;
     text-align: end;
-    padding-right: 2px;
+    padding-right: 4px;
     border: solid 1 px blue;
 }
 
@@ -69,8 +70,9 @@ textarea::placeholder {
 }
 
 .add-note {
-margin-left: 215px;
+margin-left: 220px;
 margin-bottom: 3px;
+padding: 0 2px 0 2px;
 }
 
 /* wraps all existing notes */
@@ -98,7 +100,9 @@ margin-bottom: 3px;
 }
 
 .note-text {
+    font-family: 'Cedarville Cursive', cursive;
     font-size: 13px;
+    color: darkslategray;
 }
 
 .note-added {
@@ -123,58 +127,52 @@ margin-bottom: 3px;
         font-size: 50px;
     }
 
-    /* wraps new-note-text, textarea, image upload & button */
-.new-note-container {
-    width: 380px;
-    padding: 2%;
-}
+    .new-note-container {
+        width: 380px;
+    }
 
-.new-note-text {
-    font-size: 16px;
-}
+    .new-note-text {
+        font-size: 16px;
+    }
 
-textarea {
-    font-size: 16px;
-    width: 335px;
-}
+    textarea {
+        font-size: 16px;
+        width: 335px;
+    }
 
-.character-count {
-    font-size: 11px;
-}
+    .character-count {
+        font-size: 11px;
+        padding-right: 2px;
+    }
 
-.label-text {
-    font-size: 11px;
-}
+    .label-text {
+        font-size: 11px;
+    }
 
-.choose-image {
-    font-size: 11px;
-}
+    .choose-image {
+        font-size: 11px;
+    }
 
-.add-note {
-margin-left: 280px;
-margin-bottom: 0;
-}
+    .add-note {
+        margin-left: 278px;
+        margin-bottom: 0;
+    }
 
 
-.note-text {
-    font-size: 16px;
-}
+    .note-text {
+        font-size: 16px;
 
-.note-added {
-    color:rgb(168, 128, 24);
-    font-size: 10px;
-    margin-top: 10px;
-}
+    }
 
-.delete-button {
-    font-size: 10px;
-    color: rgb(167, 126, 25);
-    height: 15px;
-    margin-top: 10px;
-    padding: 0 2px 0 2px;
-    background-color: rgba(247, 205, 128, 0.486);
-    border: solid 1px goldenrod;
-}
+    .note-added {
+        font-size: 11px;
+    }
+
+    .delete-button {
+        font-size: 11px;
+        height: 16px;
+        padding: 0 3px 0 3px;
+    }  
 
 }
 
@@ -182,6 +180,18 @@ margin-bottom: 0;
 @media screen and (min-width: 1024px) {
     .h1-notes {
         font-size: 60px;
+    }
+
+    .new-note-container {
+        width: 410px;
+    }
+
+    textarea {
+        width: 338px;
+    }
+
+    .add-note {
+        margin-left: 282px;
     }
 
 }
