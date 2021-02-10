@@ -218,7 +218,7 @@ app.post('/notes', async (request, response) => {
 
 
 // POST image with note
-app.post('/notes/image', parser.single('image'), async (request, response) => {
+app.post('/notes', parser.single('image'), async (request, response) => {
   try {
     const image = await new Note({ noteImage: request.file.path }).save()
     response.json(image)

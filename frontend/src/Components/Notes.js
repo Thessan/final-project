@@ -7,7 +7,7 @@ import { Sidebar } from './NavigationBar/Sidebar'
 import { Navbar } from './NavigationBar/Navbar'
 
 const notesURL= "https://pregnancy-week-by-week.herokuapp.com/notes"
-const imageURL= "https://pregnancy-week-by-week.herokuapp.com/notes/image"
+const imageURL= "https://pregnancy-week-by-week.herokuapp.com/notes"
 
 export const Notes = () => {
     const [existingNote, setExistingNote] = useState([]) // the existing notes in the list
@@ -17,10 +17,21 @@ export const Notes = () => {
 
     const fileInput = useRef() // for image upload
 
+    // fetch existing notes from the API
+    const fetchNotes = () => {
+        fetch(notesURL)
+        .then(response => response.json())
+        .then ((notes) => {
+            setExistingNote(notes)
+        })
+    }
+    useEffect(() => {
+        fetchNotes();
+    }, []);
 
 
-    // upload an image
-    const handleFormSubmit = (event) => {
+    // post a new note & upload an image
+    const postNote = (event) => {
         
         const formData = new FormData()
         formData.append('image', fileInput.current.files[0])
@@ -47,21 +58,8 @@ export const Notes = () => {
     }
 
 
-
-    // fetch existing notes from the API
-    const fetchNotes = () => {
-        fetch(notesURL)
-        .then(response => response.json())
-        .then ((notes) => {
-            setExistingNote(notes)
-        })
-    }
-    useEffect(() => {
-        fetchNotes();
-    }, []);
-
     // post a new note 
-    const postNote = (event) => {
+    /*  const postNote = (event) => {
         event.preventDefault();
         
         fetch(notesURL, {
@@ -74,7 +72,7 @@ export const Notes = () => {
           fetchNotes(); // updates the list of posted notes
           setNewNote(''); // resets the textarea
         })
-    }
+    } */
 
     // delete a note
     const deleteNote = (_id) => {
@@ -92,7 +90,6 @@ export const Notes = () => {
         .then(() => { 
             fetchNotes(); // after note is deleted the page refreshes with remaining existing notes
         })
-
     }
 
     return (
@@ -111,31 +108,16 @@ export const Notes = () => {
                             onChange={(event) => setNewNote(event.target.value)}
                             value={newNote}>
                         </textarea>
-                </label> 
+                        </label>
 
-                <p className="character-count"> 
-                    {newNote.length} / 400
-                </p>
-                    
+                        <p className="character-count"> 
+                        {newNote.length} / 400
+                        </p>
 
-
-
-                <form onSubmit={handleFormSubmit}>
-                    <label>
-                    Image
-                    <input type="file" ref={fileInput} />
-                    </label>
-
-
-
-                    <button type="submit">
-                        Submit
-                    </button>
-                    </form>
-
-
-
-
+                        <label>
+                        Image
+                        <input type="file" ref={fileInput} />
+                        </label> 
 
                 <button className="add-note"
                     type="submit"
@@ -144,6 +126,21 @@ export const Notes = () => {
                         <p>Add note</p>
                 </button>
             </form>
+
+                {/* <form onSubmit={postNote}>
+                    
+
+
+
+                    <button type="submit">
+                        Submit
+                    </button>
+                    </form>
+ */}
+
+
+
+
     
         </div>
 
