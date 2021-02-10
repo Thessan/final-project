@@ -186,10 +186,11 @@ app.get('/login/:id/member', authenticateUser);
 app.get('/login/:id/member', (request, response) => {
 
   const member = `Welcome, ${request.user.username}, you are now logged in.`
-  response.status(201).json(member)
+  response.status(201).json({message:member})
 });
 
 // GET notes
+app.get('/notes', authenticateUser);
 app.get('/notes', async (request, response) => {
   try {
     const notes = await Note.find()
@@ -202,7 +203,7 @@ app.get('/notes', async (request, response) => {
   }
 })
 
-
+app.post('/notes', authenticateUser);
 app.post('/notes', parser.single('image'), async (request, response) => {
   try {
     const image = await new Note({newNote: request.newNote, noteImage: request.file.path }).save()
