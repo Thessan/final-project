@@ -5,6 +5,7 @@
     flex-direction: column;
     background-image: url(./sunflower.jpg);
     background-size: cover;
+    width: auto;
     margin-top: 10px;
     padding-top: 15px;
 }
@@ -18,14 +19,18 @@
 }
 
 /* wraps new-note-text, textarea, image upload & button */
-.new-note-container {
+.notes-wrapper {
     display: flex;
     flex-direction: column;
-    width: 305px;
+    width: 310px;
     margin: 20px;
-    padding: 2%;
+    padding: 5px;
     background-color: rgba(255, 255, 255, 0.863);
     border: rgba(218, 165, 32, 0.747) outset 4px;
+}
+
+.new-note-container {
+    width: fit-content;
 }
 
 .new-note-text {
@@ -40,7 +45,7 @@ textarea {
     font-family: 'Cedarville Cursive', cursive;
     color: goldenrod;
     font-size: 13px;
-    width: 273px;
+    width: 283px;
     padding-left: 5px;
     margin-left: 5px;
 }
@@ -70,7 +75,7 @@ textarea::placeholder {
 }
 
 .add-note {
-margin-left: 220px;
+margin-left: 227px;
 margin-bottom: 3px;
 padding: 0 2px 0 2px;
 }
@@ -92,7 +97,7 @@ padding: 0 2px 0 2px;
 }
 
 .note-container {
-    width: 300px;
+    width: 310px;
     margin: 20px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.863);
@@ -127,8 +132,12 @@ padding: 0 2px 0 2px;
         font-size: 50px;
     }
 
-    .new-note-container {
+    .notes-wrapper {
         width: 380px;
+    }
+
+    .new-note-container {
+        width: fit-content;
     }
 
     .new-note-text {
@@ -137,12 +146,12 @@ padding: 0 2px 0 2px;
 
     textarea {
         font-size: 16px;
-        width: 335px;
+        width: 353px;
     }
 
     .character-count {
         font-size: 11px;
-        padding-right: 2px;
+        padding-right: 4px;
     }
 
     .label-text {
@@ -154,14 +163,12 @@ padding: 0 2px 0 2px;
     }
 
     .add-note {
-        margin-left: 278px;
-        margin-bottom: 0;
+        margin-left: 298px;
     }
 
 
     .note-text {
         font-size: 16px;
-
     }
 
     .note-added {
@@ -182,16 +189,16 @@ padding: 0 2px 0 2px;
         font-size: 60px;
     }
 
-    .new-note-container {
-        width: 410px;
+    .notes-wrapper {
+        width: 380px;
     }
 
     textarea {
-        width: 338px;
+        width: 352px;
     }
 
     .add-note {
-        margin-left: 282px;
+        margin-left: 297px;
     }
 
 }

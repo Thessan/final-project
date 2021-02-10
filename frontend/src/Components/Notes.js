@@ -98,6 +98,7 @@ export const Notes = () => {
         <Navbar />
         <h1 className="h1-notes">Pregnancy Week By Week</h1>
             <section className="notes-background">
+                <div className="notes-wrapper">
                 <div className="new-note-container">
             <form onSubmit= {postNote}>
                 <label>
@@ -129,7 +130,9 @@ export const Notes = () => {
                 </button>
 
             </form>
-
+            </div>
+            </div>
+            
                 {/* <form onSubmit={postNote}>
                     
 
@@ -139,11 +142,6 @@ export const Notes = () => {
                     </form>
  */}
 
-
-
-
-    
-        </div>
 
         <section className="note-wrapper">
         <section className="all-notes-container">
