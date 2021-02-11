@@ -1,16 +1,20 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import '../Styling/logout.css'
 import { user } from '../Reducers/user'
+import { Login } from './Login'
 
 export const Logout = () => {
 
     const dispatch = useDispatch();
+    const accessToken = useSelector((store) => store.user.login.accessToken); 
 
     const handleLogout = () => {
         dispatch(user.actions.logout());
     };
+
+    if (!accessToken) {
 
     return (
         <>   
@@ -22,5 +26,11 @@ export const Logout = () => {
                     Logout
                 </button>
         </>
+        
     )  
+    } else {
+        return (
+            <Login />
+        )
+    }
 }
