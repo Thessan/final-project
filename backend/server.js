@@ -4,49 +4,10 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 import bcrypt from 'bcrypt'
-import dotenv from 'dotenv';
-import cloudinaryFramework from 'cloudinary'
-import multer from 'multer'
-import cloudinaryStorage from 'multer-storage-cloudinary'
-
-dotenv.config()
-
-const cloudinary = cloudinaryFramework.v2; 
-cloudinary.config({
-  cloud_name: 'dslu94lzy', // this needs to be whatever you get from cloudinary
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
-})
-
-const storage = cloudinaryStorage({
-  cloudinary,
-  params: {
-    folder: 'pets',
-    allowedFormats: ['jpg', 'png'],
-    transformation: [{ width: 500, height: 500, crop: 'limit' }],
-  },
-})
-const parser = multer({ storage })
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/pregnancy-week-by-week"
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.Promise = Promise
-
-
-const Pet = mongoose.model('Pet', {
-  name: String,
-  imageUrl: String
-})
-
-app.post('/pets', parser.single('image'), async (req, res) => {
-  try {
-    const pet = await new Pet({ name: req.body.filename, imageUrl: req.file.path }).save()
-    res.json(pet)
-  } catch (err) {
-    res.status(400).json({ errors: err.errors })
-  }
-})
-
 
 const userSchema = new mongoose.Schema({
   username: {
