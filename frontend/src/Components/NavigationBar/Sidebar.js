@@ -10,7 +10,7 @@ export const Sidebar = () => {
     const [sidebar, setSidebar] = useState(false) // the original state is false = the sidebar is hidden
 
     const showSidebar = () => setSidebar(!sidebar)  // will update the value to the opposite of what it currently is
-    
+
     return (
         <>
         <div className="sidebar">

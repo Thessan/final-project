@@ -128,7 +128,7 @@ app.use((request, response, next) => {
   }
 })
 
-// HOMEPAGE
+// FIRST PAGE
 app.get('/', (request, response) => {
   if (response) {
     response.status(200).send(listEndpoints(app)) // will display all endpoints 

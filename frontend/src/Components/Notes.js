@@ -76,6 +76,7 @@ export const Notes = () => {
 
     // delete a note
     const deleteNote = (_id) => {
+
         fetch(`https://pregnancy-week-by-week.herokuapp.com/notes/${_id}`, {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json', 'Authorization': accessToken},
@@ -132,7 +133,7 @@ export const Notes = () => {
             </form>
             </div>
             </div>
-            
+
                 {/* <form onSubmit={postNote}>
                     
 

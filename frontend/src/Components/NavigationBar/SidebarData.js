@@ -40,6 +40,13 @@ export const SidebarData = [
         className: 'sidebar-text'
     },
 
+    {
+        title: 'Log out',
+        path: '/logout',
+        icon: <GoIcons.GoSignOut />,
+        className: 'sidebar-text'
+    },
+
 /*  {
         title: 'Todo Lists',
         path: '/todo-lists',

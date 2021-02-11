@@ -11,6 +11,7 @@ import { FirstTrimester } from './Pages/FirstTrimester'
 import { SecondTrimester } from './Pages/SecondTrimester'
 import { ThirdTrimester } from './Pages/ThirdTrimester'
 import { Notes } from './Components/Notes'
+import { Logout } from './Components/Logout'
 
 const reducer = combineReducers({ user: user.reducer })
 const store = configureStore({ reducer });
@@ -50,6 +51,7 @@ export const App = () => {
             <Route path='/second-trimester' component={SecondTrimester} />
             <Route path='/third-trimester' component={ThirdTrimester} />
             <Route path='/notes' component={Notes} />
+            <Route path='/logout' component={Logout} />
           </Switch>
       </BrowserRouter>
       </Provider>

@@ -41,6 +41,12 @@ export const NavbarData = [
         className: 'navbar-text'
     },
 
+    {
+        title: 'Log out',
+        path: '/logout',
+        icon: <GoIcons.GoSignOut />,
+        className: 'navbar-text'
+    },
 
 /*  {
         title: 'Todo Lists',
@@ -49,3 +55,5 @@ export const NavbarData = [
         className: 'navbar-text'
     }, */
 ]
+
+

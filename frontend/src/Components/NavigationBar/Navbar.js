@@ -5,6 +5,7 @@ import './navbar.css'
 import { NavbarData } from './NavbarData'
 
 export const Navbar = () => {
+
     return (
         <>
         <div className="navbar">
