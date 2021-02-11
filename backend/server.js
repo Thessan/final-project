@@ -4,10 +4,12 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 import bcrypt from 'bcrypt'
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 import cloudinaryFramework from 'cloudinary'
 import multer from 'multer'
 import cloudinaryStorage from 'multer-storage-cloudinary'
+
+dotenv.config()
 
 const cloudinary = cloudinaryFramework.v2; 
 cloudinary.config({
@@ -26,7 +28,25 @@ const storage = cloudinaryStorage({
 })
 const parser = multer({ storage })
 
-dotenv.config()
+const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/pregnancy-week-by-week"
+mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.Promise = Promise
+
+
+const Pet = mongoose.model('Pet', {
+  name: String,
+  imageUrl: String
+})
+
+app.post('/pets', parser.single('image'), async (req, res) => {
+  try {
+    const pet = await new Pet({ name: req.body.filename, imageUrl: req.file.path }).save()
+    res.json(pet)
+  } catch (err) {
+    res.status(400).json({ errors: err.errors })
+  }
+})
+
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -235,10 +255,6 @@ app.post('/notes', parser.single('image'), async (request, response) => {
   }
 }) */
 
-
-app.post('/pets', parser.single('image'), async (req, res) => {
-	res.json({ imageUrl: req.file.path, imageId: req.file.filename})
-})
 
 
 // DELETE a note
