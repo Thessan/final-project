@@ -7,7 +7,7 @@ import { Sidebar } from './NavigationBar/Sidebar'
 import { Navbar } from './NavigationBar/Navbar'
 
 const notesURL= "https://pregnancy-week-by-week.herokuapp.com/notes"
-const imageURL= "https://pregnancy-week-by-week.herokuapp.com/notes"
+/* const imageURL= "https://pregnancy-week-by-week.herokuapp.com/notes" */
 
 export const Notes = () => {
     const [existingNote, setExistingNote] = useState([]) // the existing notes in the list
@@ -30,7 +30,7 @@ export const Notes = () => {
     }, []);
 
 
-    // post a new note & upload an image
+/*     // post a new note & upload an image
     const postNote = (event) => {
         
         const formData = new FormData()
@@ -55,11 +55,11 @@ export const Notes = () => {
           fetchNotes(); // updates the list of posted notes
           setNewNote(''); // resets the textarea
         })
-    }
+    } */
 
 
     // post a new note 
-    /*  const postNote = (event) => {
+    const postNote = (event) => {
         event.preventDefault();
         
         fetch(notesURL, {
@@ -72,7 +72,7 @@ export const Notes = () => {
           fetchNotes(); // updates the list of posted notes
           setNewNote(''); // resets the textarea
         })
-    } */
+    }
 
     // delete a note
     const deleteNote = (_id) => {

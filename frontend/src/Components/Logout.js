@@ -7,26 +7,20 @@ import { user } from '../Reducers/user'
 export const Logout = () => {
 
     const dispatch = useDispatch();
-    
 
     const handleLogout = () => {
         dispatch(user.actions.logout());
     };
 
     return (
-        <>
-            <h1 className="h1-member">Pregnancy Week By Week</h1>
-            <div className="member-background">
-                <div className="member-wrapper">
+        <>   
+        <p>are you sure you want to log out? </p>
             <button type="submit"
                 value="submit"
                 onClick={handleLogout}
                 >
                     Logout
                 </button>
-                </div>
-        </div>
         </>
-
     )  
 }

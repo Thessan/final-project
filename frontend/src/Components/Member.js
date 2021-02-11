@@ -43,7 +43,6 @@ export const Member = () => {
                 </button>
                 </div>
         </div>
-        
         </>
     );
 };
