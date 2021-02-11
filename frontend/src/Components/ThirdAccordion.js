@@ -14,7 +14,8 @@ export function ThirdAccordion() {
         <Sidebar />
         <Navbar />
         <h1 className="h1-accordion">Pregnancy Week By Week</h1>
-        <section className="accordion-wrapper">
+        <section className="accordion-background">
+        <div className="accordion-wrapper">
         <div className="accordion-container-cne">
             <Accordion
             title="Week 28"
@@ -121,6 +122,7 @@ export function ThirdAccordion() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </br>"
             />
+        </div>
         </div>
         </section>
         </>

@@ -1,17 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
 
-/* Wraps accordion containers and all accordions */
-.accordion-wrapper {
+.accordion-background {
   display: flex;
-  flex-direction: column;
-  margin: 30px;
+  justify-content: center;
+  background-image: url(./sunflower.jpg);
+  background-size: cover;
+  min-height: 100vh;
 }
+
 .h1-accordion {
   font-family: 'Cedarville Cursive', cursive;
   font-size: 30px;
   color: rgb(247, 205, 128);
   text-shadow: 2px 2px rgb(168, 128, 24);
   text-align: center;
+  padding-bottom: 5px;
+}
+
+/* Wraps accordion containers and all accordions */
+.accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
 
 /* Wraps first half of the accordions */
@@ -29,6 +39,7 @@
   display: flex;
   flex-direction: column;
   margin: 5px;
+  max-width: 300px;
 }
 
 /* The buttons (the grey area) that are used to open and close the accordion panel */
@@ -96,6 +107,10 @@
     margin: 40px;
   }
 
+  .accordion-section {
+    max-width: 600px;
+  }
+  
   .accordion-button {
     padding: 14px;
     }

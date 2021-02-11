@@ -14,26 +14,33 @@ export function FirstAccordion() {
         <Sidebar />
         <Navbar />
         <h1 className="h1-accordion">Pregnancy Week By Week</h1>
-        <section className="accordion-wrapper">
+        <section className="accordion-background">
+        <div className="accordion-wrapper">
         <div className="accordion-container-cne">
             <Accordion
             title="Week 1"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            content="If you’ve just found out you’re expecting, you might think this is your first week of pregnancy, but you’re probably around 4 weeks pregnant (yes, already!). Skip ahead and check out week 4 instead.
+            In doctor speak, 1 week pregnant means you’re on your period and not yet pregnant. You won’t actually conceive your baby until week two or three, depending on the length of your cycle.
+            "
             />
 
             <Accordion
             title="Week 2"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            content="At 2 weeks pregnant, you’re actually still not pregnant. However you may be close! By week two your period should be finished and you might start ovulating in the next few days. If you’re preparing to try to get pregnant, keep your eyes open for signs of ovulation and do that thing you do to get pregnant—have plenty of sex around the time you expect to ovulate."
             />
         
             <Accordion
             title="Week 3"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            content="Last week sperm met the egg, and voila—a baby was made! By three weeks it’s still so early that you may have no idea that you’re actually pregnant. Conception just happened a few days ago, and there probably hasn't been time for you to miss a period yet.
+            "
             />
 
             <Accordion
             title="Week 4"
-            content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            content="If you know you're 4 weeks pregnant, you’ve found out the news earlier than a lot of women do probably because you took a test as soon as you missed your period. 
+
+            At four weeks the baby is about the size of a poppy seed, practically microscopic. 
+            "
             />
 
             <Accordion
@@ -111,6 +118,7 @@ export function FirstAccordion() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </br>"
             />
+        </div>
         </div>
         </section>
         </>
