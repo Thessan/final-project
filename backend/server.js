@@ -4,7 +4,29 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 import bcrypt from 'bcrypt'
+import dotenv from 'dotenv'
+import cloudinaryFramework from 'cloudinary'
+import multer from 'multer'
+import cloudinaryStorage from 'multer-storage-cloudinary'
 
+const cloudinary = cloudinaryFramework.v2; 
+cloudinary.config({
+  cloud_name: 'dslu94lzy', // this needs to be whatever you get from cloudinary
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+})
+
+const storage = cloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: 'pets',
+    allowedFormats: ['jpg', 'png'],
+    transformation: [{ width: 500, height: 500, crop: 'limit' }],
+  },
+})
+const parser = multer({ storage })
+
+dotenv.config()
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -213,6 +235,10 @@ app.post('/notes', parser.single('image'), async (request, response) => {
   }
 }) */
 
+
+app.post('/pets', parser.single('image'), async (req, res) => {
+	res.json({ imageUrl: req.file.path, imageId: req.file.filename})
+})
 
 
 // DELETE a note
