@@ -90,10 +90,10 @@ const Note = mongoose.model('Note', {
     type: Date,
     default: Date.now
   },
-  noteImage: {
+/*   noteImage: {
     name: String,
     imageURL: String
-  }
+  } */
 })
 
 
@@ -244,6 +244,9 @@ app.post('/notes', parser.single('image'), async (request, response) => {
   }
 }) */
 
+app.post('/images', parser.single('image'), async (request, response) => {
+	response.json({ imageUrl: request.file.path, imageId: request.file.filename})
+})
 
 
 // DELETE a note

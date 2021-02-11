@@ -117,10 +117,10 @@ export const Notes = () => {
                         </p>
 
                         
-                        <label>
+                       {/*  <label>
                         <p className="label-text">Upload an image</p>
                         <input className="choose-image" type="file" ref={fileInput} />
-                        </label> 
+                        </label>  */}
                         
                 
                 <button className="add-note"
