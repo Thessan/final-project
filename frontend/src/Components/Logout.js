@@ -1,20 +1,20 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useHistory } from "react-router-dom";
 
 import '../Styling/logout.css'
 import { user } from '../Reducers/user'
-import { Login } from './Login'
 
 export const Logout = () => {
 
+    let history = useHistory();
     const dispatch = useDispatch();
-    const accessToken = useSelector((store) => store.user.login.accessToken); 
 
     const handleLogout = () => {
         dispatch(user.actions.logout());
+        
+        history.push("/");
     };
-
-    if (!accessToken) {
 
     return (
         <>   
@@ -27,10 +27,5 @@ export const Logout = () => {
                 </button>
         </>
         
-    )  
-    } else {
-        return (
-            <Login />
-        )
-    }
+    )
 }

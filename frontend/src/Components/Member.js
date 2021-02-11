@@ -1,18 +1,12 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import '../Styling/member.css'
-import { user } from '../Reducers/user'
 import { Sidebar } from './NavigationBar/Sidebar'
 import { Navbar } from './NavigationBar/Navbar'
 
 export const Member = () => {
     const [message, setMessage] = useState("");
-    const dispatch = useDispatch();
-
-    const handleLogout = () => {
-        dispatch(user.actions.logout());
-    };
     
     const accessToken = useSelector((store) => store.user.login.accessToken); 
     const userId = useSelector((store) => store.user.login.userId);
@@ -35,12 +29,6 @@ export const Member = () => {
             <div className="member-background">
                 <div className="member-wrapper">
             <p>{message}</p>
-            <button type="submit"
-                value="submit"
-                onClick={handleLogout}
-                >
-                    Logout
-                </button>
                 </div>
         </div>
         </>
