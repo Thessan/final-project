@@ -113,7 +113,7 @@ export const Notes = () => {
                         </label>
 
                         <p className="character-count"> 
-                        {newNote.length} / 400
+                        {newNote.length} / 700
                         </p>
 
                         
@@ -126,7 +126,7 @@ export const Notes = () => {
                 <button className="add-note"
                     type="submit"
                     disabled={ 
-                    newNote.length < 5 || newNote.length > 400 ? true : false}>
+                    newNote.length < 5 || newNote.length > 700 ? true : false}>
                         <p>Add note</p>
                 </button>
 

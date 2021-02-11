@@ -1,3 +1,61 @@
-.footer {
-    background-color: darkgrey;
+.h1-logout {
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 30px;
+    color: rgb(247, 205, 128);
+    text-shadow: 2px 2px rgb(168, 128, 24);
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.logout-background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    background-image: url(./yellow-background.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.logout-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    background-color: rgba(255, 255, 255, 0.678);
+    width: 270px;
+    height: 150px;
+    margin-top: 250px;
+    border: goldenrod 3px solid;
+}
+
+.logout-text {
+    color: darkslategray;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.logout-button {
+    margin: 0 10px 0 0;
+    padding: 2px;
+}
+
+.goback-button {
+    margin: 0 0 0 10px;
+    padding: 2px;
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 668px) {
+    .h1-logout {
+        font-size: 50px;
+        width: auto;
+    }
+}
+
+/* DESKTOP VIEW */
+@media screen and (min-width: 1024px) {
+    .h1-logout {
+        font-size: 60px;
+    }
 }

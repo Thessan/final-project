@@ -16,15 +16,33 @@ export const Logout = () => {
         history.push("/");
     };
 
+    const handleGoBack = () => {
+        history.push("/member");
+    }
+
     return (
         <>   
-        <p>are you sure you want to log out? </p>
-            <button type="submit"
+        <h1 className="h1-logout">Pregnancy Week By Week</h1>
+        <section className="logout-background">
+            <div className="logout-container">
+        <p className="logout-text">Are you sure you want to log out?</p>
+            <div className="button-container">
+                <button className="logout-button" type="submit"
                 value="submit"
                 onClick={handleLogout}
                 >
-                    Logout
+                    Yes, log out
                 </button>
+
+                <button className="goback-button" type="submit"
+                value="submit"
+                onClick={handleGoBack}
+                >
+                    No, go back
+                </button>
+                </div>
+                </div>
+                </section>
         </>
         
     )

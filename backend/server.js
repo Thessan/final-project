@@ -60,7 +60,7 @@ const Note = mongoose.model('Note', {
     type: String,
     required: true,
     minlength: 5,
-    maxlength: 200,
+    maxlength: 700,
   },
   createdAt: {
     type: Date,

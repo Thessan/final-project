@@ -35,6 +35,7 @@
 }
 
 .login-form p {
+    color: darkslategray;
     font-size: 13px;
     text-align: center;
     margin: 10px;
