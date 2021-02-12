@@ -56,6 +56,7 @@ export function Accordion(props) {
                 // the prop dangerouslySetInnerHTML makes it possible to use HTML within a string
                 dangerouslySetInnerHTML={{ __html: props.content }}  
                 />
+
             </div>
         </div>
 );

@@ -28,7 +28,7 @@ export const Member = () => {
             <h1 className="h1-member">Pregnancy Week By Week</h1>
             <div className="member-background">
                 <div className="member-wrapper">
-            <p>{message}</p>
+{/*             <p className="message-text">{message}</p> */}
                 </div>
         </div>
         </>

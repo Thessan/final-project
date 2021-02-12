@@ -182,7 +182,6 @@ padding: 0 2px 0 2px;
         height: 16px;
         padding: 0 3px 0 3px;
     }  
-
 }
 
 /* DESKTOP VIEW */
@@ -203,4 +202,7 @@ padding: 0 2px 0 2px;
         margin-left: 297px;
     }
 
+    .note-text {
+        font-size: 18px;
+    }
 }

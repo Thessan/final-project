@@ -157,7 +157,7 @@ app.post('/login', async (request, response) => {
 app.get('/login/:id/member', authenticateUser);
 app.get('/login/:id/member', (request, response) => {
 
-  const member = `Welcome, ${request.user.username}, you are now logged in.`
+  const member = `Welcome ${request.user.username}!`
   response.status(201).json({message:member})
 });
 

@@ -7,6 +7,7 @@ import { Navbar } from './NavigationBar/Navbar'
 import { Accordion } from './Accordion'
 import '../Styling/accordion.css'
 
+
 export function FirstAccordion() {
     
     return (
@@ -23,6 +24,7 @@ export function FirstAccordion() {
             In doctor speak, 1 week pregnant means you’re on your period and not yet pregnant. You won’t actually conceive your baby until week two or three, depending on the length of your cycle.
             "
             />
+
 
             <Accordion
             title="Week 2"

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import moment from 'moment'
 
@@ -15,7 +15,7 @@ export const Notes = () => {
 
     const accessToken = useSelector((store) => store.user.login.accessToken);
 
-    const fileInput = useRef() // for image upload
+/*     const fileInput = useRef() // for image upload */
 
     // fetch existing notes from the API
     const fetchNotes = () => {
@@ -117,7 +117,7 @@ export const Notes = () => {
                         </p>
 
                         
-                       {/*  <label>
+                    {/*  <label>
                         <p className="label-text">Upload an image</p>
                         <input className="choose-image" type="file" ref={fileInput} />
                         </label>  */}
