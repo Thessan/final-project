@@ -52,11 +52,9 @@ export function Accordion(props) {
                 style={{ maxHeight: `${setHeight}` }}>
             
             <div
-                className="accordion-text"
-                // the prop dangerouslySetInnerHTML makes it possible to use HTML within a string
-                dangerouslySetInnerHTML={{ __html: props.content }}  
-                />
-
+                className="accordion-text">
+                    {props.children}
+                </div>
             </div>
         </div>
 );
