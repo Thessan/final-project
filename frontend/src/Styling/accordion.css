@@ -157,8 +157,6 @@ h2 {
 
 /* DESKTOP VIEW */
 @media screen and (min-width: 1024px) {
-
-
     .h1-accordion {
     font-size: 60px;
   }
