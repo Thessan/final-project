@@ -424,31 +424,3 @@ export function SecondAccordion() {
             <SecondAccordion />
             </BrowserRouter>)
         , rootElement);
-
-
-        /* <Accordion
-            title="Week ">
-            <h2></h2>
-            <br></br>
-
-            <p className="small-header">YOUR CHILD</p>
-            <p>
-            
-            </p>
-            <br></br>
-            <br></br>
-
-            <p className="small-header">MOTHER</p>
-            <p>
-            
-            </p>
-            <br></br>
-            <br></br>
-            
-            <p className="small-header">PARTNER</p>
-            <p>
-            
-            </p>
-            <br></br>
-            <img src={week1} alt="illustration week 1"/>
-            </Accordion> */
