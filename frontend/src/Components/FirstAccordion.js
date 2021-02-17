@@ -145,7 +145,7 @@ export function FirstAccordion() {
             <h2>From 4 full weeks + 0 days to 4 full weeks + 6 days</h2>
             <br></br>
 
-            <p className="small-header">OUR CHILD</p>
+            <p className="small-header">YOUR CHILD</p>
             <p>
             The embryo to be developed into a fetus is now about four millimeters long. The armpits protrude from the body like tiny, tiny buds. The brain system has divided into two halves and you can see the spine being formed. Between the vertebrae in the spine, nerve bundles look out from the spinal cord, they will find their way out into the whole body. Soon, the baby's continued development will also show. Depending on whether it is an x- or y-chromosome that has hit the egg first, either testosterone or estrogen will be released and form the baby's genitals.         
             </p>

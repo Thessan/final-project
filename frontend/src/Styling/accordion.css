@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
 
 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 240px;
   height: 180px;
 }
+
 .accordion-background {
   display: flex;
   justify-content: center;
@@ -112,8 +116,22 @@ h2 {
 
 /* TABLET VIEW */ 
 @media screen and (min-width: 668px) {
+  img {
+    width: 340px;
+    height: 280px;
+  }
+
   .h1-accordion {
     font-size: 50px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+  
+  .small-header {
+    font-size: 16px;
+    font-weight: 600;
   }
 
   .accordion-wrapper {
@@ -139,6 +157,8 @@ h2 {
 
 /* DESKTOP VIEW */
 @media screen and (min-width: 1024px) {
+
+
     .h1-accordion {
     font-size: 60px;
   }
