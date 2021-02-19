@@ -25,12 +25,12 @@ export const Member = () => {
         <>
             <Sidebar />
             <Navbar />
-            <h1 className="h1-member">Pregnancy Week By Week</h1>
-            <div className="member-background">
-                <div className="member-wrapper">
-{/*             <p className="message-text">{message}</p> */}
-                </div>
-        </div>
+                <h1 className="h1-member">Pregnancy Week By Week</h1>
+                    <div className="member-background">
+                        <div className="member-wrapper">
+                            <p className="message-text">{message}</p>
+                        </div>
+                    </div>
         </>
     );
 };

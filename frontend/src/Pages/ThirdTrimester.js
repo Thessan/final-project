@@ -5,7 +5,7 @@ import { ThirdAccordion } from '../Components/ThirdAccordion'
 export const ThirdTrimester = () => {
     return (
         <>
-        <ThirdAccordion />
+            <ThirdAccordion />
         </>
     );
 }

@@ -1,4 +1,3 @@
-
 .notes-background {
     display: flex;
     justify-content: center;
@@ -9,7 +8,7 @@
     width: auto;
     margin-top: 10px;
     padding-top: 15px;
-}
+}   /* ISSUE: background image OR background color won't fill the entire page, repeat or expand like the background does in accordion.css. Why? */
 
 .h1-notes {
     font-family: 'Cedarville Cursive', cursive;
@@ -43,9 +42,8 @@
 }
 
 textarea {
-    font-family: 'Cedarville Cursive', cursive;
-    color: goldenrod;
     font-size: 13px;
+    color: goldenrod;
     width: 283px;
     padding-left: 5px;
     margin-left: 5px;
@@ -53,15 +51,15 @@ textarea {
 
 textarea::placeholder {
     color: goldenrod;
+    padding: 2px;
 }
 
 .character-count {
     font-size: 10px;
-    color: goldenrod;
+    color: darkslategray;
     font-weight: 600;
     text-align: end;
-    padding-right: 4px;
-    border: solid 1 px blue;
+    margin: 3px 0 3px 0;
 }
 
 .label-text {
@@ -76,9 +74,8 @@ textarea::placeholder {
 }
 
 .add-note {
-margin-left: 227px;
-margin-bottom: 3px;
-padding: 0 2px 0 2px;
+    margin: 2px 0 3px 227px;
+    padding: 0 2px 0 2px;
 }
 
 /* wraps all existing notes */
@@ -106,13 +103,13 @@ padding: 0 2px 0 2px;
 }
 
 .note-text {
-    font-family: 'Cedarville Cursive', cursive;
     font-size: 13px;
-    color: darkslategray;
+    color: goldenrod;
+    word-wrap: break-word;
 }
 
 .note-added {
-    color:rgb(168, 128, 24);
+    color:rgba(47, 79, 79, 0.712);
     font-size: 10px;
     margin-top: 10px;
 }
@@ -152,7 +149,7 @@ padding: 0 2px 0 2px;
 
     .character-count {
         font-size: 11px;
-        padding-right: 4px;
+        padding-right: 2px;
     }
 
     .label-text {
@@ -167,9 +164,7 @@ padding: 0 2px 0 2px;
         margin-left: 298px;
     }
 
-
-    .note-text {
-        
+    .note-text {  
         font-size: 16px;
     }
 
@@ -198,11 +193,11 @@ padding: 0 2px 0 2px;
         width: 352px;
     }
 
-    .add-note {
-        margin-left: 297px;
+    .character-count {
+        padding-right: 1px;
     }
 
-    .note-text {
-        font-size: 18px;
+    .add-note {
+        margin-left: 297px;
     }
 }

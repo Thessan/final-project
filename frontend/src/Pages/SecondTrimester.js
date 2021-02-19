@@ -5,7 +5,7 @@ import { SecondAccordion } from '../Components/SecondAccordion'
 export const SecondTrimester = () => {
     return (
         <>
-        <SecondAccordion />
+            <SecondAccordion />
         </>
     );
 }

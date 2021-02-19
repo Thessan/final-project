@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 
+import '../Styling/accordion.css'
 import { Sidebar } from './NavigationBar/Sidebar'
 import { Navbar } from './NavigationBar/Navbar'
 import { Accordion } from './Accordion'
-import '../Styling/accordion.css'
 import week1 from '../Styling/week1.jpg'
 import week2 from '../Styling/week2.jpg'
 import week3 from '../Styling/week3.jpg'
@@ -19,7 +19,6 @@ import week10 from '../Styling/week10.jpg'
 import week11 from '../Styling/week11.jpg'
 import week12 from '../Styling/week12.jpg'
 import week13 from '../Styling/week13.jpg'
-
 
 export function FirstAccordion() {
     
@@ -55,7 +54,6 @@ export function FirstAccordion() {
             <br></br>
             <img src={week1} alt="illustration week 1"/>
             </Accordion>
-
 
             <Accordion
             title="Week 2">
@@ -284,7 +282,6 @@ export function FirstAccordion() {
             <br></br>
             <img src={week10} alt="illustration week 10"/>
             </Accordion>
-
 
             <Accordion
             title="Week 11">

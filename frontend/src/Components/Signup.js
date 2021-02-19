@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { user } from '../Reducers/user'
 import '../Styling/signup.css'
+import { user } from '../Reducers/user'
 
 const SIGNUP_URL = 'https://pregnancy-week-by-week.herokuapp.com/signup'
 
@@ -66,55 +66,57 @@ export const Signup = () => {
     return (
         <div className="signup-background">
             <h1 className="h1-signup">Pregnancy Week By Week</h1>
-            <div className="wrapper">
-        <form onSubmit= {onSignup}>
-            <div className="signup-form" tabIndex="0">
-                <p>Want to become a member? Sign up here!</p>
-                    <div className="input">
-                        <input type="text"
-                            id="username"
-                            placeholder="Username"
-                            onChange={onUsernameChange}
-                        />
-                    </div>
+                <div className="wrapper">
+                    <form onSubmit= {onSignup}>
+                        <div className="signup-form" tabIndex="0">
+                            <p>Want to become a member? Sign up here!</p>
+                            
+                            <div className="input">
+                                <input type="text"
+                                    id="username"
+                                    placeholder="Username"
+                                    onChange={onUsernameChange}
+                                />
+                            </div>
                 
-                    <div className="input">
-                        <input type="email"
-                            id="email"
-                            placeholder="Email"
-                            onChange={onEmailChange}
-                        />  
-                    </div>
-                        <div className="label-div">
-                            <label> e.g hello@hello.com </label>
+                            <div className="input">
+                                <input type="email"
+                                    id="email"
+                                    placeholder="Email"
+                                    onChange={onEmailChange}
+                                />  
+                            </div>
+
+                            <div className="label-div">
+                                <label> e.g hello@hello.com </label>
+                            </div>
+
+                            <div className="input">
+                                <input type="password"
+                                id="password"
+                                placeholder="Password"
+                                onChange={onPasswordChange}
+                                />
+                            </div>
+
+                            <div className="label-div">
+                                <label> min 5 characters, max 15 </label>
+                            </div>
+
+                            <div className="signup-button" tabIndex="0">
+                                <button type="submit" value="submit">
+                                    Signup
+                                </button>
+                            </div>
+
+                            {signupError && <p>{signupError}</p>}
+
+                            <div className="to-login">
+                                <p>Already a member? <Link to={`/`}>Login here</Link></p>
+                            </div>
                         </div>
-
-                    <div className="input">
-                        <input type="password"
-                            id="password"
-                            placeholder="Password"
-                            onChange={onPasswordChange}
-                        />
-                    </div>
-                        <div className="label-div">
-                            <label> min 5 characters, max 15 </label>
-                        </div>
-
-                <div className="signup-button" tabIndex="0">
-                    <button type="submit"
-                        value="submit"
-                        >
-                        Signup
-                        </button>
+                    </form>
                 </div>
-                {signupError && <p>{signupError}</p>}
-
-                <div className="to-login">
-                    <p>Already a member? <Link to={`/`}>Login here</Link></p>
-                </div>
-            </div>
-        </form>
-        </div>
         </div>
     )
 }

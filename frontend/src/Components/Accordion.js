@@ -26,14 +26,13 @@ export function Accordion(props) {
         // will check if setActive is equal to active and if it is the function will change setHeight to 0px
         // if it's already 0px it will change the value of the accordions content scrollHeight
         setHeightState(
-            setActive === "active" ? "0px" : `${content.current.scrollHeight}px`
-        );
+            setActive === "active" ? "0px" : `${content.current.scrollHeight}px`);
 
         // when the button is clicked the Chevron icon will rotate
         setRotateState(
             setActive === "active" ? "accordion-icon" : "accordion-icon rotate"
         );
-}
+    }
 
     return (
         <div className="accordion-section">
@@ -50,13 +49,13 @@ export function Accordion(props) {
                 ref={content}
                 className="accordion-content"
                 style={{ maxHeight: `${setHeight}` }}>
-            
-            <div
-                className="accordion-text">
+                
+                <div
+                    className="accordion-text">
                     {props.children}
                 </div>
             </div>
         </div>
-);
+    );
 }
 

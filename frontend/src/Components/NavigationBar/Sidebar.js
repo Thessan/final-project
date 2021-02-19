@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import * as GiIcons from 'react-icons/gi' 
 import * as MdIcons from 'react-icons/md' 
 
-import './sidebar.css'
+import '../../Styling/sidebar.css'
 import { SidebarData } from './SidebarData'
 
 export const Sidebar = () => {
