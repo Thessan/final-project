@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+/* import styled from 'styled-components'
 
 export const Wrapper =styled.section`
     display: flex;
@@ -36,4 +36,4 @@ export const List = styled.li`
 export const TodoText = styled.p`
     font-size: 14px;
     margin: 0 12px 0 12px;
-`
+` */
